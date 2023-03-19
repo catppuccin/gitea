@@ -1,0 +1,242 @@
+@use "sass:color";
+@import "catppuccin/mocha";
+
+$accent: $mauve;
+
+:root {
+  color-scheme: dark;
+  accent-color: #{$accent};
+  --is-dark-theme: true;
+
+  --color-primary: #{$accent};
+  --color-primary-contrast: #{$crust};
+
+  --color-primary-dark-1: #{color.adjust($accent, $lightness: -3%)};
+  --color-primary-dark-2: #{color.adjust($accent, $lightness: -6%)};
+  --color-primary-dark-3: #{color.adjust($accent, $lightness: -9%)};
+  --color-primary-dark-4: #{color.adjust($accent, $lightness: -12%)};
+  --color-primary-dark-5: #{color.adjust($accent, $lightness: -15%)};
+  --color-primary-dark-6: #{color.adjust($accent, $lightness: -18%)};
+  --color-primary-dark-7: #{color.adjust($accent, $lightness: -21%)};
+
+  --color-primary-light-1: #{color.adjust($accent, $lightness: 3%)};
+  --color-primary-light-2: #{color.adjust($accent, $lightness: 6%)};
+  --color-primary-light-3: #{color.adjust($accent, $lightness: 9%)};
+  --color-primary-light-4: #{color.adjust($accent, $lightness: 12%)};
+  --color-primary-light-5: #{color.adjust($accent, $lightness: 15%)};
+  --color-primary-light-6: #{color.adjust($accent, $lightness: 18%)};
+  --color-primary-light-7: #{color.adjust($accent, $lightness: 21%)};
+
+  --color-primary-alpha-10: #{color.change($accent, $alpha: 0.1)};
+  --color-primary-alpha-20: #{color.change($accent, $alpha: 0.2)};
+  --color-primary-alpha-30: #{color.change($accent, $alpha: 0.3)};
+  --color-primary-alpha-40: #{color.change($accent, $alpha: 0.4)};
+  --color-primary-alpha-50: #{color.change($accent, $alpha: 0.5)};
+  --color-primary-alpha-60: #{color.change($accent, $alpha: 0.6)};
+  --color-primary-alpha-70: #{color.change($accent, $alpha: 0.7)};
+  --color-primary-alpha-80: #{color.change($accent, $alpha: 0.8)};
+  --color-primary-alpha-90: #{color.change($accent, $alpha: 0.9)};
+
+  --color-secondary: #{$surface1};
+
+  --color-secondary-dark-1: #{color.adjust($surface1, $lightness: 5%)};
+  --color-secondary-dark-2: #{color.adjust($surface1, $lightness: 10%)};
+  --color-secondary-dark-3: #{color.adjust($surface1, $lightness: 15%)};
+  --color-secondary-dark-4: #{color.adjust($surface1, $lightness: 20%)};
+  --color-secondary-dark-5: #{color.adjust($surface1, $lightness: 25%)};
+  --color-secondary-dark-6: #{color.adjust($surface1, $lightness: 30%)};
+  --color-secondary-dark-7: #{color.adjust($surface1, $lightness: 35%)};
+  --color-secondary-dark-8: #{color.adjust($surface1, $lightness: 40%)};
+  --color-secondary-dark-9: #{color.adjust($surface1, $lightness: 45%)};
+  --color-secondary-dark-10: #{color.adjust($surface1, $lightness: 50%)};
+  --color-secondary-dark-11: #{color.adjust($surface1, $lightness: 55%)};
+  --color-secondary-dark-12: #{color.adjust($surface1, $lightness: 60%)};
+  --color-secondary-dark-13: #{color.adjust($surface1, $lightness: 65%)};
+
+  --color-secondary-light-1: #{color.adjust($surface1, $lightness: -5%)};
+  --color-secondary-light-2: #{color.adjust($surface1, $lightness: -10%)};
+  --color-secondary-light-3: #{color.adjust($surface1, $lightness: -15%)};
+  --color-secondary-light-4: #{color.adjust($surface1, $lightness: -20%)};
+
+  --color-secondary-alpha-10: #{color.change($surface1, $alpha: 0.1)};
+  --color-secondary-alpha-20: #{color.change($surface1, $alpha: 0.2)};
+  --color-secondary-alpha-30: #{color.change($surface1, $alpha: 0.3)};
+  --color-secondary-alpha-40: #{color.change($surface1, $alpha: 0.4)};
+  --color-secondary-alpha-50: #{color.change($surface1, $alpha: 0.5)};
+  --color-secondary-alpha-60: #{color.change($surface1, $alpha: 0.6)};
+  --color-secondary-alpha-70: #{color.change($surface1, $alpha: 0.7)};
+  --color-secondary-alpha-80: #{color.change($surface1, $alpha: 0.8)};
+  --color-secondary-alpha-90: #{color.change($surface1, $alpha: 0.9)};
+
+  /* colors */
+  --color-red: #{$red};
+  --color-orange: #{$peach};
+  --color-yellow: #{$yellow};
+  --color-olive: #{$green};
+  --color-green: #{$green};
+  --color-teal: #{$teal};
+  --color-blue: #{$blue};
+  --color-violet: #{$lavender};
+  --color-purple: #{$mauve};
+  --color-pink: #{$pink};
+  --color-brown: #{$flamingo};
+  --color-grey: #{$overlay2};
+  --color-black: #{$mantle};
+
+  /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
+  --color-red-light: #{color.adjust($red, $lightness: -10%)};
+  --color-orange-light: #{color.adjust($peach, $lightness: -10%)};
+  --color-yellow-light: #{color.adjust($yellow, $lightness: -10%)};
+  --color-olive-light: #{color.adjust($green, $lightness: -10%)};
+  --color-green-light: #{color.adjust($green, $lightness: -10%)};
+  --color-teal-light: #{color.adjust($teal, $lightness: -10%)};
+  --color-blue-light: #{color.adjust($blue, $lightness: -10%)};
+  --color-violet-light: #{color.adjust($lavender, $lightness: -10%)};
+  --color-purple-light: #{color.adjust($mauve, $lightness: -10%)};
+  --color-pink-light: #{color.adjust($pink, $lightness: -10%)};
+  --color-brown-light: #{color.adjust($flamingo, $lightness: -10%)};
+  --color-grey-light: #{color.adjust($overlay2, $lightness: -10%)};
+  --color-black-light: #{color.adjust($mantle, $lightness: -10%)};
+
+  /* other colors */
+  --color-gold: #{$rosewater};
+  --color-white: #{$text};
+  --color-diff-removed-word-bg: #{color.change($red, $alpha: 0.15)};
+  --color-diff-added-word-bg: #{color.change($green, $alpha: 0.15)};
+  --color-diff-removed-row-bg: #{color.change($red, $alpha: 0.15)};
+  --color-diff-moved-row-bg: #{color.change($yellow, $alpha: 0.15)};
+  --color-diff-added-row-bg: #{color.change($green, $alpha: 0.15)};
+  --color-diff-removed-row-border: #{color.change($red, $alpha: 0.15)};
+  --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.15)};
+  --color-diff-added-row-border: #{color.change($green, $alpha: 0.15)};
+  --color-diff-inactive: #{$overlay2};
+  --color-error-border: #{$red};
+  --color-error-bg: #{$red};
+  --color-error-bg-active: #{color.adjust($red, $lightness: -5%)};
+  --color-error-bg-hover: #{color.adjust($red, $lightness: -10%)};
+  --color-error-text: #{$crust};
+  --color-success-border: #{color.adjust($green, $lightness: -10%)};
+  --color-success-bg: #{$green};
+  --color-success-text: #{$crust};
+  --color-warning-border: #{color.adjust($yellow, $lightness: -10%)};
+  --color-warning-bg: #{$yellow};
+  --color-warning-text: #{$crust};
+  --color-info-border: #{color.adjust($blue, $lightness: -10%)};
+  --color-info-bg: #{$crust};
+  --color-info-text: #{$crust};
+  --color-red-badge: #{color.adjust($red, $lightness: -10%)};
+  --color-red-badge-bg: #{$crust};
+  --color-red-badge-hover-bg: #{color.adjust($red, $lightness: -5%)};
+  --color-green-badge: #{$green};
+  --color-green-badge-bg: #{$crust};
+  --color-green-badge-hover-bg: #{color.adjust($green, $lightness: -5%)};
+  --color-yellow-badge: #{$yellow};
+  --color-yellow-badge-bg: #{$crust};
+  --color-yellow-badge-hover-bg: #{color.adjust($yellow, $lightness: -5%)};
+  --color-orange-badge: #{$peach};
+  --color-orange-badge-bg: #{$crust};
+  --color-orange-badge-hover-bg: #{color.adjust($peach, $lightness: -5%)};
+  --color-git: #{$peach};
+
+  /* target-based colors */
+  --color-body: #{$crust};
+  --color-box-header: #{$mantle};
+  --color-box-body: #{$base};
+  --color-box-body-highlight: #{$surface0};
+  --color-text-dark: #{$subtext0};
+  --color-text: #{$text};
+  --color-text-light: #{$subtext1};
+  --color-text-light-1: #{$subtext1};
+  --color-text-light-2: #{$subtext1};
+  --color-text-light-3: #{$subtext1};
+  --color-footer: #{$mantle};
+  --color-timeline: #{$surface0};
+  --color-input-text: #{$text};
+  --color-input-background: #{$surface0};
+  --color-input-toggle-background: #{$surface0};
+  --color-input-border: #{$surface1};
+  --color-input-border-hover: #{$surface2};
+  --color-navbar: #{$mantle};
+  --color-navbar-transparent: #{color.change($crust, $alpha: 0)};
+  --color-light: #{color.change($crust, $alpha: 0.1)};
+  --color-light-mimic-enabled: rgba(
+    0,
+    0,
+    0,
+    calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
+  );
+  --color-light-border: #ffffff28;
+  --color-hover: #ffffff10;
+  --color-active: #{color.change($text, $alpha: 0.1)};
+  --color-menu: #{$surface0};
+  --color-card: #{$surface0};
+  --color-markup-table-row: #ffffff06;
+  --color-markup-code-block: #ffffff0d;
+  --color-button: #353846;
+  --color-code-bg: #{$base};
+  --color-code-sidebar-bg: #2e323e;
+  --color-shadow: #{color.change($crust, $alpha: 0.1)};
+  --color-secondary-bg: #2a2e3a;
+  --color-text-focus: #{$text};
+  --color-expand-button: #{$surface2};
+  --color-placeholder-text: #{$surface2};
+  --color-editor-line-highlight: var(--color-primary-light-5);
+  --color-project-board-bg: var(--color-secondary-light-2);
+  /* should ideally be --color-text-dark, see #15651 */
+  --color-caret: var(--color-text);
+  --color-reaction-bg: #ffffff12;
+  --color-reaction-active-bg: var(--color-primary-alpha-40);
+  --color-header-bar: #{$mantle};
+  --color-label-active-bg: #4c525e;
+  --color-accent: var(--color-primary-light-1);
+  --color-small-accent: var(--color-primary-light-5);
+  --color-active-line: #{$surface1};
+}
+
+/* invert emojis that are hard to read otherwise */
+.emoji[aria-label="check mark"],
+.emoji[aria-label="currency exchange"],
+.emoji[aria-label="TOP arrow"],
+.emoji[aria-label="END arrow"],
+.emoji[aria-label="ON! arrow"],
+.emoji[aria-label="SOON arrow"],
+.emoji[aria-label="heavy dollar sign"],
+.emoji[aria-label="copyright"],
+.emoji[aria-label="registered"],
+.emoji[aria-label="trade mark"],
+.emoji[aria-label="multiply"],
+.emoji[aria-label="plus"],
+.emoji[aria-label="minus"],
+.emoji[aria-label="divide"],
+.emoji[aria-label="curly loop"],
+.emoji[aria-label="double curly loop"],
+.emoji[aria-label="wavy dash"],
+.emoji[aria-label="paw prints"],
+.emoji[aria-label="musical note"],
+.emoji[aria-label="musical notes"] {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+.ui.ui.ui.button:not(.inverted),
+.ui.ui.ui.label:not(.inverted) {
+  &.primary,
+  &.green,
+  &.red,
+  &.teal {
+    color: $crust;
+    &:hover {
+      color: $base;
+    }
+  }
+}
+
+.ui.basic.modal {
+  background-color: $base;
+}
+
+::selection {
+  background: color.change($rosewater, $alpha: 0.3) !important;
+}
+
+@import "chroma";
+@import "../src/codemirror/dark";
