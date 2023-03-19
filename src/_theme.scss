@@ -1,12 +1,14 @@
 @use "sass:color";
-@import "catppuccin/mocha";
-
-$accent: $mauve;
 
 :root {
-  color-scheme: dark;
+  @if $is-dark {
+    color-schema: dark;
+  } @else {
+    color-schema: light;
+  }
+  --is-dark-theme: $is-dark;
+
   accent-color: #{$accent};
-  --is-dark-theme: true;
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$crust};
@@ -239,4 +241,4 @@ $accent: $mauve;
 }
 
 @import "chroma";
-@import "../src/codemirror/dark";
+// @import "../src/codemirror/dark";
