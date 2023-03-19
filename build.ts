@@ -25,7 +25,7 @@ const dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const builder = (flavor: string, accent: string) => `
 @import "catppuccin/${flavor}";
 $accent: $${accent};
-$is-dark: ${flavor !== "latte"};
+$isDark: ${flavor !== "latte"};
 @import "theme";
 `;
 

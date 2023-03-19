@@ -1,12 +1,19 @@
 @use "sass:color";
 
+// context-aware lighten: darkens if dark, lightens if light
+@function ctx_lighten($color, $amount) {
+  $multiplier: if($isDark, -1, 1);
+  @return color.adjust($color, $lightness: $amount * $multiplier);
+}
+
 :root {
-  @if $is-dark {
-    color-schema: dark;
+  @if $isDark {
+    color-scheme: dark;
+    --is-dark-theme: true;
   } @else {
-    color-schema: light;
+    color-scheme: light;
+    --is-dark-theme: false;
   }
-  --is-dark-theme: $is-dark;
 
   accent-color: #{$accent};
 
@@ -86,19 +93,19 @@
   --color-black: #{$mantle};
 
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
-  --color-red-light: #{color.adjust($red, $lightness: -10%)};
-  --color-orange-light: #{color.adjust($peach, $lightness: -10%)};
-  --color-yellow-light: #{color.adjust($yellow, $lightness: -10%)};
-  --color-olive-light: #{color.adjust($green, $lightness: -10%)};
-  --color-green-light: #{color.adjust($green, $lightness: -10%)};
-  --color-teal-light: #{color.adjust($teal, $lightness: -10%)};
-  --color-blue-light: #{color.adjust($blue, $lightness: -10%)};
-  --color-violet-light: #{color.adjust($lavender, $lightness: -10%)};
-  --color-purple-light: #{color.adjust($mauve, $lightness: -10%)};
-  --color-pink-light: #{color.adjust($pink, $lightness: -10%)};
-  --color-brown-light: #{color.adjust($flamingo, $lightness: -10%)};
-  --color-grey-light: #{color.adjust($overlay2, $lightness: -10%)};
-  --color-black-light: #{color.adjust($mantle, $lightness: -10%)};
+  --color-red-light: #{ctx_lighten($red, 10%)};
+  --color-orange-light: #{ctx_lighten($peach, 10%)};
+  --color-yellow-light: #{ctx_lighten($yellow, 10%)};
+  --color-olive-light: #{ctx_lighten($green, 10%)};
+  --color-green-light: #{ctx_lighten($green, 10%)};
+  --color-teal-light: #{ctx_lighten($teal, 10%)};
+  --color-blue-light: #{ctx_lighten($blue, 10%)};
+  --color-violet-light: #{ctx_lighten($lavender, 10%)};
+  --color-purple-light: #{ctx_lighten($mauve, 10%)};
+  --color-pink-light: #{ctx_lighten($pink, 10%)};
+  --color-brown-light: #{ctx_lighten($flamingo, 10%)};
+  --color-grey-light: #{ctx_lighten($overlay2, 10%)};
+  --color-black-light: #{ctx_lighten($mantle, 10%)};
 
   /* other colors */
   --color-gold: #{$rosewater};
@@ -219,8 +226,8 @@
   filter: invert(100%) hue-rotate(180deg);
 }
 
-.ui.ui.ui.button:not(.inverted),
-.ui.ui.ui.label:not(.inverted) {
+.ui.ui.ui.button:not(.inverted, .basic),
+.ui.ui.ui.label:not(.inverted, .basic) {
   &.primary,
   &.green,
   &.red,
@@ -241,4 +248,4 @@
 }
 
 @import "chroma";
-// @import "../src/codemirror/dark";
+@import "codemirror";

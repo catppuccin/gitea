@@ -1,0 +1,91 @@
+.CodeMirror,
+.CodeMirror.cm-s-default,
+.CodeMirror.cm-s-paper {
+  .cm-property {
+    color: $text;
+  }
+
+  .cm-header {
+    color: $text;
+  }
+
+  .cm-quote {
+    color: $green;
+  }
+
+  .cm-keyword {
+    color: $mauve;
+  }
+
+  .cm-atom {
+    color: $red;
+  }
+
+  .cm-number {
+    color: $peach;
+  }
+
+  .cm-def {
+    color: $text;
+  }
+
+  .cm-variable-2 {
+    color: $sky;
+  }
+
+  .cm-variable-3 {
+    color: $teal;
+  }
+
+  .cm-comment {
+    color: $surface2;
+  }
+
+  .cm-string {
+    color: $green;
+  }
+
+  .cm-string-2 {
+    color: $green;
+  }
+
+  .cm-meta {
+    color: $peach;
+  }
+
+  .cm-qualifier {
+    color: $peach;
+  }
+
+  .cm-builtin {
+    color: $peach;
+  }
+
+  .cm-bracket {
+    color: $text;
+  }
+
+  .cm-tag {
+    color: $yellow;
+  }
+
+  .cm-attribute {
+    color: $yellow;
+  }
+
+  .cm-hr {
+    color: $overlay2;
+  }
+
+  .cm-url {
+    color: $blue;
+  }
+
+  .cm-link {
+    color: $blue;
+  }
+
+  .cm-error {
+    color: $red;
+  }
+}
