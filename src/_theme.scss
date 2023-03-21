@@ -20,21 +20,21 @@
   --color-primary: #{$accent};
   --color-primary-contrast: #{$crust};
 
-  --color-primary-dark-1: #{color.adjust($accent, $lightness: -3%)};
-  --color-primary-dark-2: #{color.adjust($accent, $lightness: -6%)};
-  --color-primary-dark-3: #{color.adjust($accent, $lightness: -9%)};
-  --color-primary-dark-4: #{color.adjust($accent, $lightness: -12%)};
-  --color-primary-dark-5: #{color.adjust($accent, $lightness: -15%)};
-  --color-primary-dark-6: #{color.adjust($accent, $lightness: -18%)};
-  --color-primary-dark-7: #{color.adjust($accent, $lightness: -21%)};
+  --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
+  --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
+  --color-primary-dark-3: #{ctx_lighten($accent, 9%)};
+  --color-primary-dark-4: #{ctx_lighten($accent, 12%)};
+  --color-primary-dark-5: #{ctx_lighten($accent, 15%)};
+  --color-primary-dark-6: #{ctx_lighten($accent, 18%)};
+  --color-primary-dark-7: #{ctx_lighten($accent, 21%)};
 
-  --color-primary-light-1: #{color.adjust($accent, $lightness: 3%)};
-  --color-primary-light-2: #{color.adjust($accent, $lightness: 6%)};
-  --color-primary-light-3: #{color.adjust($accent, $lightness: 9%)};
-  --color-primary-light-4: #{color.adjust($accent, $lightness: 12%)};
-  --color-primary-light-5: #{color.adjust($accent, $lightness: 15%)};
-  --color-primary-light-6: #{color.adjust($accent, $lightness: 18%)};
-  --color-primary-light-7: #{color.adjust($accent, $lightness: 21%)};
+  --color-primary-light-1: #{ctx_lighten($accent, -3%)};
+  --color-primary-light-2: #{ctx_lighten($accent, -6%)};
+  --color-primary-light-3: #{ctx_lighten($accent, -9%)};
+  --color-primary-light-4: #{ctx_lighten($accent, -12%)};
+  --color-primary-light-5: #{ctx_lighten($accent, -15%)};
+  --color-primary-light-6: #{ctx_lighten($accent, -18%)};
+  --color-primary-light-7: #{ctx_lighten($accent, -21%)};
 
   --color-primary-alpha-10: #{color.change($accent, $alpha: 0.1)};
   --color-primary-alpha-20: #{color.change($accent, $alpha: 0.2)};
@@ -48,34 +48,34 @@
 
   --color-secondary: #{$surface1};
 
-  --color-secondary-dark-1: #{color.adjust($surface1, $lightness: 5%)};
-  --color-secondary-dark-2: #{color.adjust($surface1, $lightness: 10%)};
-  --color-secondary-dark-3: #{color.adjust($surface1, $lightness: 15%)};
-  --color-secondary-dark-4: #{color.adjust($surface1, $lightness: 20%)};
-  --color-secondary-dark-5: #{color.adjust($surface1, $lightness: 25%)};
-  --color-secondary-dark-6: #{color.adjust($surface1, $lightness: 30%)};
-  --color-secondary-dark-7: #{color.adjust($surface1, $lightness: 35%)};
-  --color-secondary-dark-8: #{color.adjust($surface1, $lightness: 40%)};
-  --color-secondary-dark-9: #{color.adjust($surface1, $lightness: 45%)};
-  --color-secondary-dark-10: #{color.adjust($surface1, $lightness: 50%)};
-  --color-secondary-dark-11: #{color.adjust($surface1, $lightness: 55%)};
-  --color-secondary-dark-12: #{color.adjust($surface1, $lightness: 60%)};
-  --color-secondary-dark-13: #{color.adjust($surface1, $lightness: 65%)};
+  --color-secondary-dark-1: #{ctx_lighten($surface0, -3%)};
+  --color-secondary-dark-2: #{ctx_lighten($surface0, -6%)};
+  --color-secondary-dark-3: #{ctx_lighten($surface0, -9%)};
+  --color-secondary-dark-4: #{ctx_lighten($surface0, -12%)};
+  --color-secondary-dark-5: #{ctx_lighten($surface0, -15%)};
+  --color-secondary-dark-6: #{ctx_lighten($surface0, -18%)};
+  --color-secondary-dark-7: #{ctx_lighten($surface0, -21%)};
+  --color-secondary-dark-8: #{ctx_lighten($surface0, -24%)};
+  --color-secondary-dark-9: #{ctx_lighten($surface0, -27%)};
+  --color-secondary-dark-10: #{ctx_lighten($surface0, -30%)};
+  --color-secondary-dark-11: #{ctx_lighten($surface0, -33%)};
+  --color-secondary-dark-12: #{ctx_lighten($surface0, -36%)};
+  --color-secondary-dark-13: #{ctx_lighten($surface0, -39%)};
 
-  --color-secondary-light-1: #{color.adjust($surface1, $lightness: -5%)};
-  --color-secondary-light-2: #{color.adjust($surface1, $lightness: -10%)};
-  --color-secondary-light-3: #{color.adjust($surface1, $lightness: -15%)};
-  --color-secondary-light-4: #{color.adjust($surface1, $lightness: -20%)};
+  --color-secondary-light-1: #{ctx_lighten($surface0, 3%)};
+  --color-secondary-light-2: #{ctx_lighten($surface0, 6%)};
+  --color-secondary-light-3: #{ctx_lighten($surface0, 9%)};
+  --color-secondary-light-4: #{ctx_lighten($surface0, 12%)};
 
-  --color-secondary-alpha-10: #{color.change($surface1, $alpha: 0.1)};
-  --color-secondary-alpha-20: #{color.change($surface1, $alpha: 0.2)};
-  --color-secondary-alpha-30: #{color.change($surface1, $alpha: 0.3)};
-  --color-secondary-alpha-40: #{color.change($surface1, $alpha: 0.4)};
-  --color-secondary-alpha-50: #{color.change($surface1, $alpha: 0.5)};
-  --color-secondary-alpha-60: #{color.change($surface1, $alpha: 0.6)};
-  --color-secondary-alpha-70: #{color.change($surface1, $alpha: 0.7)};
-  --color-secondary-alpha-80: #{color.change($surface1, $alpha: 0.8)};
-  --color-secondary-alpha-90: #{color.change($surface1, $alpha: 0.9)};
+  --color-secondary-alpha-10: #{color.change($surface0, $alpha: 0.1)};
+  --color-secondary-alpha-20: #{color.change($surface0, $alpha: 0.2)};
+  --color-secondary-alpha-30: #{color.change($surface0, $alpha: 0.3)};
+  --color-secondary-alpha-40: #{color.change($surface0, $alpha: 0.4)};
+  --color-secondary-alpha-50: #{color.change($surface0, $alpha: 0.5)};
+  --color-secondary-alpha-60: #{color.change($surface0, $alpha: 0.6)};
+  --color-secondary-alpha-70: #{color.change($surface0, $alpha: 0.7)};
+  --color-secondary-alpha-80: #{color.change($surface0, $alpha: 0.8)};
+  --color-secondary-alpha-90: #{color.change($surface0, $alpha: 0.9)};
 
   /* colors */
   --color-red: #{$red};
@@ -112,39 +112,39 @@
   --color-white: #{$text};
   --color-diff-removed-word-bg: #{color.change($red, $alpha: 0.15)};
   --color-diff-added-word-bg: #{color.change($green, $alpha: 0.15)};
-  --color-diff-removed-row-bg: #{color.change($red, $alpha: 0.15)};
-  --color-diff-moved-row-bg: #{color.change($yellow, $alpha: 0.15)};
-  --color-diff-added-row-bg: #{color.change($green, $alpha: 0.15)};
-  --color-diff-removed-row-border: #{color.change($red, $alpha: 0.15)};
-  --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.15)};
-  --color-diff-added-row-border: #{color.change($green, $alpha: 0.15)};
+  --color-diff-removed-row-bg: #{color.change($red, $alpha: 0.07)};
+  --color-diff-moved-row-bg: #{color.change($yellow, $alpha: 0.07)};
+  --color-diff-added-row-bg: #{color.change($green, $alpha: 0.07)};
+  --color-diff-removed-row-border: #{color.change($red, $alpha: 0.07)};
+  --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.07)};
+  --color-diff-added-row-border: #{color.change($green, $alpha: 0.07)};
   --color-diff-inactive: #{$overlay2};
   --color-error-border: #{$red};
   --color-error-bg: #{$red};
-  --color-error-bg-active: #{color.adjust($red, $lightness: -5%)};
-  --color-error-bg-hover: #{color.adjust($red, $lightness: -10%)};
+  --color-error-bg-active: #{ctx_lighten($red, 5%)};
+  --color-error-bg-hover: #{ctx_lighten($red, 10%)};
   --color-error-text: #{$crust};
-  --color-success-border: #{color.adjust($green, $lightness: -10%)};
+  --color-success-border: #{ctx_lighten($green, 10%)};
   --color-success-bg: #{$green};
   --color-success-text: #{$crust};
-  --color-warning-border: #{color.adjust($yellow, $lightness: -10%)};
+  --color-warning-border: #{ctx_lighten($yellow, 10%)};
   --color-warning-bg: #{$yellow};
   --color-warning-text: #{$crust};
-  --color-info-border: #{color.adjust($blue, $lightness: -10%)};
+  --color-info-border: #{ctx_lighten($blue, 10%)};
   --color-info-bg: #{$crust};
   --color-info-text: #{$crust};
-  --color-red-badge: #{color.adjust($red, $lightness: -10%)};
+  --color-red-badge: #{ctx_lighten($red, 10%)};
   --color-red-badge-bg: #{$crust};
-  --color-red-badge-hover-bg: #{color.adjust($red, $lightness: -5%)};
+  --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
   --color-green-badge: #{$green};
   --color-green-badge-bg: #{$crust};
-  --color-green-badge-hover-bg: #{color.adjust($green, $lightness: -5%)};
+  --color-green-badge-hover-bg: #{ctx_lighten($green, 5%)};
   --color-yellow-badge: #{$yellow};
   --color-yellow-badge-bg: #{$crust};
-  --color-yellow-badge-hover-bg: #{color.adjust($yellow, $lightness: -5%)};
+  --color-yellow-badge-hover-bg: #{ctx_lighten($yellow, 5%)};
   --color-orange-badge: #{$peach};
   --color-orange-badge-bg: #{$crust};
-  --color-orange-badge-hover-bg: #{color.adjust($peach, $lightness: -5%)};
+  --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
   --color-git: #{$peach};
 
   /* target-based colors */
@@ -167,36 +167,37 @@
   --color-input-border-hover: #{$surface2};
   --color-navbar: #{$mantle};
   --color-navbar-transparent: #{color.change($crust, $alpha: 0)};
-  --color-light: #{color.change($crust, $alpha: 0.1)};
+  --color-light: #{color.change($surface2, $alpha: 0.3)};
   --color-light-mimic-enabled: rgba(
     0,
     0,
     0,
     calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
   );
-  --color-light-border: #ffffff28;
-  --color-hover: #ffffff10;
+  --color-light-border: #{$surface2};
+  --color-hover: #{color.change($overlay0, $alpha: 0.1)};
   --color-active: #{color.change($text, $alpha: 0.1)};
   --color-menu: #{$surface0};
   --color-card: #{$surface0};
-  --color-markup-table-row: #ffffff06;
-  --color-markup-code-block: #ffffff0d;
-  --color-button: #353846;
+  --color-markup-table-row: #{color.change($text, $alpha: 0.02)};
+  --color-markup-code-block: #{color.change($text, $alpha: 0.05)};
+  --color-button: #{$surface0};
   --color-code-bg: #{$base};
-  --color-code-sidebar-bg: #2e323e;
+  --color-code-sidebar-bg: #{$surface0};
   --color-shadow: #{color.change($crust, $alpha: 0.1)};
-  --color-secondary-bg: #2a2e3a;
+  --color-secondary-bg: #{$surface0};
   --color-text-focus: #{$text};
   --color-expand-button: #{$surface2};
   --color-placeholder-text: #{$surface2};
   --color-editor-line-highlight: var(--color-primary-light-5);
   --color-project-board-bg: var(--color-secondary-light-2);
+  /* gitea source code: */
   /* should ideally be --color-text-dark, see #15651 */
   --color-caret: var(--color-text);
-  --color-reaction-bg: #ffffff12;
+  --color-reaction-bg: #{color.change($text, $alpha: 0.07)};
   --color-reaction-active-bg: var(--color-primary-alpha-40);
   --color-header-bar: #{$mantle};
-  --color-label-active-bg: #4c525e;
+  --color-label-active-bg: #{$surface2};
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
   --color-active-line: #{$surface1};
