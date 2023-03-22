@@ -244,6 +244,11 @@
   background-color: $base;
 }
 
+// link color for signed commits
+.ui.commit-header-row .svg.gitea-lock ~ a {
+  color: $crust;
+}
+
 ::selection {
   background: color.change($rosewater, $alpha: 0.3) !important;
 }
