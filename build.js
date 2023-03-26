@@ -10,8 +10,25 @@ $isDark: ${flavor !== "latte"};
 @import "theme";
 `;
 
+const accents = [
+  "rosewater",
+  "flamingo",
+  "pink",
+  "mauve",
+  "red",
+  "maroon",
+  "peach",
+  "yellow",
+  "green",
+  "teal",
+  "sky",
+  "sapphire",
+  "blue",
+  "lavender",
+];
+
 for (const flavor of Object.keys(ctp.variants)) {
-  for (const accent of Object.keys(ctp.labels)) {
+  for (const accent of accents) {
     const input = builder(flavor, accent);
     const result = sass.compileString(input, {
       loadPaths: [
