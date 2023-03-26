@@ -36,7 +36,7 @@
 
 ## Usage
 
-1. Download the latest release.
+1. Download the [latest release](https://github.com/catppuccin/gitea/releases/latest).
 2. Place the CSS files in your `$GITEA_CUSTOM/public/css` directory.
 3. Add the themes to your [`app.ini`](https://docs.gitea.io/en-us/customizing-gitea/#customizing-the-look-of-gitea).
 4. Restart your Gitea instance.
