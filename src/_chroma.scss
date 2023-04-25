@@ -6,19 +6,19 @@
 }
 /* Comment */
 .chroma .c {
-  color: $surface2;
+  color: $overlay0;
 }
 /* CommentSingle */
 .chroma .c1 {
-  color: $surface2;
+  color: $overlay0;
 }
 /* CommentHashbang */
 .chroma .ch {
-  color: $surface2;
+  color: $overlay0;
 }
 /* CommentMultiline */
 .chroma .cm {
-  color: $surface2;
+  color: $overlay0;
 }
 /* CommentPreproc */
 .chroma .cp {
@@ -30,7 +30,7 @@
 }
 /* CommentSpecial */
 .chroma .cs {
-  color: $surface2;
+  color: $overlay0;
 }
 /* LiteralStringDelimiter */
 .chroma .dl {
@@ -177,7 +177,7 @@
 }
 /* NameFunction */
 .chroma .nf {
-  color: $sky;
+  color: $blue;
 }
 /* NameEntity */
 .chroma .ni {
@@ -218,7 +218,7 @@
 }
 /* Punctuation */
 .chroma .p {
-  color: $text;
+  color: $overlay2;
 }
 /* NameProperty */
 .chroma .py {
