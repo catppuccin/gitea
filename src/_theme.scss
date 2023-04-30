@@ -6,6 +6,10 @@
   @return color.adjust($color, $lightness: $amount * $multiplier);
 }
 
+$lvl1: if($isDark, $crust, $base);
+$lvl2: if($isDark, $mantle, $mantle);
+$lvl3: if($isDark, $base, $crust);
+
 :root {
   @if $isDark {
     color-scheme: dark;
@@ -18,7 +22,7 @@
   accent-color: #{$accent};
 
   --color-primary: #{$accent};
-  --color-primary-contrast: #{$crust};
+  --color-primary-contrast: #{$lvl1};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
@@ -90,7 +94,7 @@
   --color-pink: #{$pink};
   --color-brown: #{$flamingo};
   --color-grey: #{$overlay2};
-  --color-black: #{$mantle};
+  --color-black: #{$lvl2};
 
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
   --color-red-light: #{ctx_lighten($red, 10%)};
@@ -105,7 +109,7 @@
   --color-pink-light: #{ctx_lighten($pink, 10%)};
   --color-brown-light: #{ctx_lighten($flamingo, 10%)};
   --color-grey-light: #{ctx_lighten($overlay2, 10%)};
-  --color-black-light: #{ctx_lighten($mantle, 10%)};
+  --color-black-light: #{ctx_lighten($lvl2, 10%)};
 
   /* other colors */
   --color-gold: #{$rosewater};
@@ -123,34 +127,34 @@
   --color-error-bg: #{$red};
   --color-error-bg-active: #{ctx_lighten($red, 5%)};
   --color-error-bg-hover: #{ctx_lighten($red, 10%)};
-  --color-error-text: #{$crust};
+  --color-error-text: #{$lvl1};
   --color-success-border: #{ctx_lighten($green, 10%)};
   --color-success-bg: #{$green};
-  --color-success-text: #{$crust};
+  --color-success-text: #{$lvl1};
   --color-warning-border: #{ctx_lighten($yellow, 10%)};
   --color-warning-bg: #{$yellow};
-  --color-warning-text: #{$crust};
+  --color-warning-text: #{$lvl1};
   --color-info-border: #{ctx_lighten($blue, 10%)};
-  --color-info-bg: #{$crust};
+  --color-info-bg: #{$lvl1};
   --color-info-text: #{$text};
   --color-red-badge: #{ctx_lighten($red, 10%)};
-  --color-red-badge-bg: #{$crust};
+  --color-red-badge-bg: #{$lvl1};
   --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
   --color-green-badge: #{$green};
-  --color-green-badge-bg: #{$crust};
+  --color-green-badge-bg: #{$lvl1};
   --color-green-badge-hover-bg: #{ctx_lighten($green, 5%)};
   --color-yellow-badge: #{$yellow};
-  --color-yellow-badge-bg: #{$crust};
+  --color-yellow-badge-bg: #{$lvl1};
   --color-yellow-badge-hover-bg: #{ctx_lighten($yellow, 5%)};
   --color-orange-badge: #{$peach};
-  --color-orange-badge-bg: #{$crust};
+  --color-orange-badge-bg: #{$lvl1};
   --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
   --color-git: #{$peach};
 
-  /* target-based colors */
-  --color-body: #{$crust};
-  --color-box-header: #{$mantle};
-  --color-box-body: #{$base};
+  /* target-lvl3d colors */
+  --color-body: #{$lvl1};
+  --color-box-header: #{$lvl2};
+  --color-box-body: #{$lvl2};
   --color-box-body-highlight: #{$surface0};
   --color-text-dark: #{$subtext0};
   --color-text: #{$text};
@@ -158,15 +162,15 @@
   --color-text-light-1: #{$subtext1};
   --color-text-light-2: #{$subtext1};
   --color-text-light-3: #{$subtext1};
-  --color-footer: #{$mantle};
+  --color-footer: #{$lvl2};
   --color-timeline: #{$surface0};
   --color-input-text: #{$text};
   --color-input-background: #{$surface0};
   --color-input-toggle-background: #{$surface0};
   --color-input-border: #{$surface1};
   --color-input-border-hover: #{$surface2};
-  --color-navbar: #{$mantle};
-  --color-navbar-transparent: #{color.change($crust, $alpha: 0)};
+  --color-navbar: #{$lvl2};
+  --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
   --color-light: #{color.change($surface2, $alpha: 0.3)};
   --color-light-mimic-enabled: rgba(
     0,
@@ -182,9 +186,9 @@
   --color-markup-table-row: #{color.change($text, $alpha: 0.02)};
   --color-markup-code-block: #{color.change($text, $alpha: 0.05)};
   --color-button: #{$surface0};
-  --color-code-bg: #{$base};
+  --color-code-bg: #{$lvl3};
   --color-code-sidebar-bg: #{$surface0};
-  --color-shadow: #{color.change($crust, $alpha: 0.1)};
+  --color-shadow: #{color.change($lvl1, $alpha: 0.1)};
   --color-secondary-bg: #{$surface0};
   --color-text-focus: #{$text};
   --color-expand-button: #{$surface2};
@@ -196,7 +200,7 @@
   --color-caret: var(--color-text);
   --color-reaction-bg: #{color.change($text, $alpha: 0.07)};
   --color-reaction-active-bg: var(--color-primary-alpha-40);
-  --color-header-bar: #{$mantle};
+  --color-header-bar: #{$lvl2};
   --color-label-active-bg: #{$surface2};
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
@@ -235,20 +239,20 @@
   &.green,
   &.red,
   &.teal {
-    color: $crust;
+    color: $lvl1;
     &:hover {
-      color: $base;
+      color: $lvl3;
     }
   }
 }
 
 .ui.basic.modal {
-  background-color: $base;
+  background-color: $lvl3;
 }
 
 // link color for signed commits
 .ui.commit-header-row .svg.gitea-lock ~ a {
-  color: $crust;
+  color: $lvl1;
 }
 
 ::selection {
