@@ -94,7 +94,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-pink: #{$pink};
   --color-brown: #{$flamingo};
   --color-grey: #{$overlay2};
-  --color-black: if($isDark, #{$mantle}, #{$text});
+  --color-black: #{if(isDark, $mantle, $text)};
 
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
   --color-red-light: #{ctx_lighten($red, 10%)};
@@ -109,11 +109,11 @@ $lvl3: if($isDark, $base, $crust);
   --color-pink-light: #{ctx_lighten($pink, 10%)};
   --color-brown-light: #{ctx_lighten($flamingo, 10%)};
   --color-grey-light: #{ctx_lighten($overlay2, 10%)};
-  --color-black-light: if(
-    $isDark,
-    #{ctx_lighten($mantle, 10%)},
-    #{ctx_lighten($text, 10%)}
-  );
+  --color-black-light: #{if(
+      isDark,
+      ctx_lighten($mantle, 10%),
+      ctx_lighten($text, 10%)
+    )};
 
   /* other colors */
   --color-gold: #{$rosewater};
