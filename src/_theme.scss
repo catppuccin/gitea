@@ -132,7 +132,7 @@
   --color-warning-text: #{$crust};
   --color-info-border: #{ctx_lighten($blue, 10%)};
   --color-info-bg: #{$crust};
-  --color-info-text: #{$crust};
+  --color-info-text: #{$text};
   --color-red-badge: #{ctx_lighten($red, 10%)};
   --color-red-badge-bg: #{$crust};
   --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
@@ -192,7 +192,7 @@
   --color-editor-line-highlight: var(--color-primary-light-5);
   --color-project-board-bg: var(--color-secondary-light-2);
   /* gitea source code: */
-  /* should ideally be --color-text-dark, see #15651 */
+  /* should ideally be --color-text-dark, see go-gitea/gitea#15651 */
   --color-caret: var(--color-text);
   --color-reaction-bg: #{color.change($text, $alpha: 0.07)};
   --color-reaction-active-bg: var(--color-primary-alpha-40);
