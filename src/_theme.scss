@@ -269,6 +269,13 @@ $lvl3: if($isDark, $base, $crust);
   }
 }
 
+// modal text color for the "Remove GPG Key" modal
+.ui.basic.modal,
+.ui.basic.modal > .header,
+.ui.inverted.button {
+  color: $text !important;
+}
+
 ::selection {
   background: color.change($rosewater, $alpha: 0.3) !important;
 }
