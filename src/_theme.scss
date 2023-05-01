@@ -259,6 +259,16 @@ $lvl3: if($isDark, $base, $crust);
   color: $lvl1;
 }
 
+// most recent commit hover when signed
+.ui.sha.isSigned.isVerified:hover {
+  .shortsha {
+    color: $lvl1;
+  }
+  svg.gitea-lock {
+    fill: $lvl1;
+  }
+}
+
 ::selection {
   background: color.change($rosewater, $alpha: 0.3) !important;
 }
