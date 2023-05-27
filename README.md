@@ -42,6 +42,9 @@
 4. Restart your Gitea instance.
 5. Select the theme in Gitea > Account > Settings > Appearance.
 
+> **Note**\
+> Gitea >1.18 is required for this theme.
+
 ## 💝 Thanks to
 
 - [winston](https://github.com/nekowinston)
