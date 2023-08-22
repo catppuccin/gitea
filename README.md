@@ -58,7 +58,7 @@ THEMES = catppuccin-latte-rosewater,catppuccin-latte-flamingo,catppuccin-latte-p
 5. Select the theme in Gitea > Account > Settings > Appearance.
 
 > **Note**\
-> Gitea >1.18 is required for this theme.
+> Gitea >1.20 is required for this theme.
 
 ## 💝 Thanks to
 
