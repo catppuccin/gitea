@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "@catppuccin/palette": "^0.1.7",
-    "sass": "^1.60.0"
-  },
-  "scripts": {
-    "build": "node ./build.js"
-  }
-}

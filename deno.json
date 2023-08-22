@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@catppuccin/palette": "npm:@catppuccin/palette@0.2.0",
+    "sass": "npm:sass@1.66.1",
+    "std/path": "https://deno.land/std@0.199.0/path/mod.ts"
+  },
+  "lock": true,
+  "nodeModulesDir": true,
+  "tasks": {
+    "build": "./build.ts"
+  }
+}
