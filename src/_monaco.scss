@@ -1,0 +1,19 @@
+.monaco-editor {
+  // selected text
+  .selected-text {
+    background-color: $surface0 !important;
+  }
+  // line numbers
+  .margin-view-overlays .line-numbers {
+    color: $subtext0 !important;
+  }
+  .line-numbers.active-line-number {
+    color: $accent !important;
+  }
+
+  // current / cursor line
+  .view-overlays .current-line,
+  .margin-view-overlays .current-line-margin {
+    background-color: #{if($isDark, color.mix($surface0, $base, 64%), color.mix($mantle, $base, 70%))} !important;
+  }
+}
