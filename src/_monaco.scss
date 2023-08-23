@@ -14,6 +14,125 @@
   // current / cursor line
   .view-overlays .current-line,
   .margin-view-overlays .current-line-margin {
-    background-color: #{if($isDark, color.mix($surface0, $base, 64%), color.mix($mantle, $base, 70%))} !important;
+    background-color: #{if(
+        $isDark,
+        color.mix($surface0, $base, 64%),
+        color.mix($mantle, $base, 70%)
+      )} !important;
+  }
+
+  // Note: all of the hotpink stuff is there so it's easily visible, since these editor scope mappings are a mess
+
+  // plaintext
+  .mtk1 {
+    color: $text !important;
+  }
+  .mtk2 {
+    color: #ff69b4 !important;
+  }
+  // decorators
+  .mtk3 {
+    color: $peach !important;
+  }
+  // shell arguments
+  .mtk4 {
+    color: $teal !important;
+  }
+  // css constants & pre-defineds
+  .mtk5 {
+    color: $text !important;
+  }
+  // keywords
+  .mtk6 {
+    color: $mauve !important;
+  }
+  // numbers
+  .mtk7 {
+    color: $peach !important;
+  }
+  // comments
+  .mtk8 {
+    color: $overlay2 !important;
+  }
+  // sometimes a keyword, apparently
+  .mtk9 {
+    color: $mauve !important;
+  }
+  // braces, brackets, parentheses
+  .mtk10 {
+    color: $subtext0 !important;
+  }
+  // arrow brackets & equal signs in HTML
+  .mtk11 {
+    color: $teal !important;
+  }
+  // @ sign in javascript ¯\_(ツ)_/¯
+  .mtk12 {
+    color: $teal !important;
+  }
+  .mtk13 {
+    color: #ff69b4 !important;
+  }
+  .mtk14 {
+    color: #ff69b4 !important;
+  }
+  // regex, css classnames, and HTML keywords (huh)
+  .mtk15 {
+    color: $mauve !important;
+  }
+  // shebangs
+  .mtk16 {
+    color: $overlay2 !important;
+  }
+  .mtk17 {
+    color: #ff69b4 !important;
+  }
+  .mtk18 {
+    color: #ff69b4 !important;
+  }
+  // glob operator i guess
+  .mtk19 {
+    color: $teal !important;
+  }
+  .mtk20 {
+    color: #ff69b4 !important;
+  }
+  // strings
+  .mtk21 {
+    color: $green !important;
+  }
+  .mtk22 {
+    color: #ff69b4 !important;
+  }
+  // functions
+  .mtk23 {
+    color: $blue !important;
+  }
+  // shell variables
+  .mtk24 {
+    color: $peach !important;
+  }
+  // weird variables
+  .mtk25 {
+    color: $pink !important;
+  }
+
+  .bracket-highlighting-0 {
+    color: color.mix($text, $red, 40%) !important;
+  }
+  .bracket-highlighting-1 {
+    color: color.mix($text, $peach, 40%) !important;
+  }
+  .bracket-highlighting-2 {
+    color: color.mix($text, $yellow, 40%) !important;
+  }
+  .bracket-highlighting-3 {
+    color: color.mix($text, $green, 40%) !important;
+  }
+  .bracket-highlighting-4 {
+    color: color.mix($text, $blue, 40%) !important;
+  }
+  .bracket-highlighting-5 {
+    color: color.mix($text, $mauve, 40%) !important;
   }
 }
