@@ -17,6 +17,8 @@ jobs:
         with:
           release-type: simple
 
+      - uses: actions/checkout@v3
+
       - uses: denoland/setup-deno@v1
         if: ${{ steps.release.outputs.release_created }}
         with:
