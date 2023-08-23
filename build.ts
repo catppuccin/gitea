@@ -1,4 +1,5 @@
 #!/usr/bin/env -S deno run -A
+
 import * as path from "std/path";
 import * as sass from "sass";
 import ctp from "npm:@catppuccin/palette";
@@ -49,6 +50,9 @@ for (const flavor of flavors) {
   }
 }
 
+// TODO:
+// refactor this part out to a common import, since ctp/ctp & ctp/userstyles
+// are both using the same base function
 const updateReadme = ({
   readme,
   section,
