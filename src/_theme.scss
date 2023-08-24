@@ -145,7 +145,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-red-badge-bg: #{$lvl1};
   --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
   --color-green-badge: #{$green};
-  --color-green-badge-bg: #{$lvl1};
+  --color-green-badge-bg: #{$green};
   --color-green-badge-hover-bg: #{ctx_lighten($green, 5%)};
   --color-yellow-badge: #{$yellow};
   --color-yellow-badge-bg: #{$lvl1};
@@ -266,7 +266,7 @@ $lvl3: if($isDark, $base, $crust);
 }
 
 // most recent commit hover when signed
-.ui.sha.isSigned.isVerified:hover {
+.ui.sha.isSigned.isVerified {
   .shortsha {
     color: $lvl1;
   }
