@@ -18,6 +18,7 @@ jobs:
           release-type: simple
 
       - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.release_created }}
 
       - uses: denoland/setup-deno@v1
         if: ${{ steps.release.outputs.release_created }}
@@ -36,4 +37,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run:
-          gh release upload ${{ steps.release.outputs.tag_name }} ./artifact/some-build-artifact.zip
+          gh release upload ${{ steps.release.outputs.tag_name }} ./catppuccin-gitea.tar.gz
