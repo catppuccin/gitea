@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/catppuccin/gitea/compare/v0.4.0...v0.4.1) (2023-08-24)
+
+
+### Bug Fixes
+
+* **commits:** signed commit background ([fe15a3a](https://github.com/catppuccin/gitea/commit/fe15a3ac012e0bcbfd57bcdb3e83382164c7e9f3)), closes [#13](https://github.com/catppuccin/gitea/issues/13)
+
 ## [0.4.0](https://github.com/catppuccin/gitea/compare/v0.3.1...v0.4.0) (2023-08-23)
 
 
