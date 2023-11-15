@@ -37,7 +37,7 @@
 ## Usage
 
 1. Download the [latest release](https://github.com/catppuccin/gitea/releases/latest).
-2. Place the CSS files in your `$GITEA_CUSTOM/public/css` directory.
+2. Place the CSS files in `$GITEA_CUSTOM/public/assets/css` if using Gitea 1.21.0 or newer and `$GITEA_CUSTOM/public/css` otherwise.
 3. Add the themes to your `app.ini`. See the [Gitea documentation](https://docs.gitea.io/en-us/customizing-gitea/#customizing-the-look-of-gitea).\
    Here's a snippet if you want to offer all Flavor-Accent combinations:
 
