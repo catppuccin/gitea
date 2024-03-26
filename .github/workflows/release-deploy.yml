@@ -1,0 +1,68 @@
+name: Release and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - run: deno task build
+
+      - name: Upload Pages Artifact
+        uses: "actions/upload-pages-artifact@v3"
+        with:
+          path: "dist/"
+
+  release:
+    needs: "build"
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: "Release"
+        id: "release"
+        uses: "google-github-actions/release-please-action@v3"
+        with:
+          release-type: "simple"
+
+      - name: Create tarball
+        if: ${{ steps.release.outputs.release_created }}
+        run: tar czf catppuccin-gitea.tar.gz --directory=./dist .
+
+      - name: Upload Release Artifacts
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.release.outputs.tag_name }} ./catppuccin-gitea.tar.gz
+
+
+  deploy:
+    needs: "build"
+
+    runs-on: "ubuntu-latest"
+
+    permissions:
+      pages: "write"
+      id-token: "write"
+
+    environment:
+      name: "github-pages"
+      url: "${{ steps.deployment.outputs.page_url }}"
+
+    steps:
+      - name: "Deploy to GitHub Pages"
+        id: "deployment"
+        uses: "actions/deploy-pages@v4"
