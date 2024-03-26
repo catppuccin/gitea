@@ -28,6 +28,12 @@ jobs:
       - run: deno task build
         if: ${{ steps.release.outputs.release_created }}
 
+      - name: Publish to GitHub Pages
+        if: ${{ steps.release.outputs.release_created }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+
       - name: Create tarball
         if: ${{ steps.release.outputs.release_created }}
         run: tar czf catppuccin-gitea.tar.gz --directory=./dist .
