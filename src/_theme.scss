@@ -6,9 +6,9 @@
   @return color.adjust($color, $lightness: $amount * $multiplier);
 }
 
-$lvl1: $base;
+$lvl1: if($isDark, $crust, $base);
 $lvl2: $mantle;
-$lvl3: $crust;
+$lvl3: if($isDark, $base, $crust);
 
 :root {
   @if $isDark {
