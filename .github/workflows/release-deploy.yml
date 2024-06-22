@@ -22,6 +22,12 @@ jobs:
         uses: "actions/upload-pages-artifact@v3"
         with:
           path: "dist/"
+          
+      - name: Upload produced css
+        uses: actions/upload-artifact@v4
+        with:
+          name: css
+          path: "dist/"
 
   release:
     needs: "build"
@@ -38,6 +44,12 @@ jobs:
         uses: "google-github-actions/release-please-action@v3"
         with:
           release-type: "simple"
+          draft: true
+          
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: css
 
       - name: Create tarball
         if: ${{ steps.release.outputs.release_created }}
