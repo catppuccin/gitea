@@ -1,12 +1,5 @@
 # Changelog
 
-## [0.4.2](https://github.com/catppuccin/gitea/compare/v0.4.1...v0.4.2) (2024-06-22)
-
-
-### Bug Fixes
-
-* update to match userstyles style guide ([#24](https://github.com/catppuccin/gitea/issues/24)) ([66661f9](https://github.com/catppuccin/gitea/commit/66661f9eb5a9cb59d72564921441a70849444874))
-
 ## [0.4.1](https://github.com/catppuccin/gitea/compare/v0.4.0...v0.4.1) (2023-08-24)
 
 
