@@ -50,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: css
+          path: "dist/"
 
       - name: Create tarball
         if: ${{ steps.release.outputs.release_created }}
