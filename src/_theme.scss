@@ -198,7 +198,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-secondary-bg: #{$surface0};
   --color-text-focus: #{$text};
   --color-expand-button: #{$surface2};
-  --color-placeholder-text: #{$surface2};
+  --color-placeholder-text: #{$subtext0};
   --color-editor-line-highlight: var(--color-primary-light-5);
   --color-project-board-bg: var(--color-secondary-light-2);
   /* gitea source code: */
@@ -283,7 +283,7 @@ $lvl3: if($isDark, $base, $crust);
 }
 
 ::selection {
-  background: color.change($rosewater, $alpha: 0.3) !important;
+  background: color.change($accent, $alpha: 0.3) !important;
 }
 
 @import "chroma";
