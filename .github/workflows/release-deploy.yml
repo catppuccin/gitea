@@ -35,9 +35,7 @@ jobs:
     steps:
       - name: "Release"
         id: "release"
-        uses: "google-github-actions/release-please-action@v3"
-        with:
-          release-type: "simple"
+        uses: "googleapis/release-please-action@v4"
 
       - name: Create tarball
         if: ${{ steps.release.outputs.release_created }}
