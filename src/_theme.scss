@@ -282,6 +282,10 @@ $lvl3: if($isDark, $base, $crust);
   color: $text !important;
 }
 
+.inline-code-block {
+  color: #{$crust};
+}
+
 ::selection {
   background: color.change($accent, $alpha: 0.3) !important;
 }
