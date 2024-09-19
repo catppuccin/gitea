@@ -23,6 +23,7 @@ $lvl3: if($isDark, $base, $crust);
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$lvl1};
+  --color-primary-hover: #{ctx_lighten($accent, 5%)};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
@@ -154,6 +155,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-orange-badge-bg: #{$lvl1};
   --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
   --color-git: #{$peach};
+  --color-highlight-bg: #{color.change($yellow, $alpha: 0.15)};
 
   /* target-based colors */
   --color-body: #{$lvl1};
@@ -280,6 +282,10 @@ $lvl3: if($isDark, $base, $crust);
 .ui.basic.modal > .header,
 .ui.inverted.button {
   color: $text !important;
+}
+
+.inline-code-block {
+  color: #{$crust};
 }
 
 ::selection {
