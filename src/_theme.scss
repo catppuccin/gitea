@@ -154,6 +154,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-orange-badge-bg: #{$lvl1};
   --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
   --color-git: #{$peach};
+  --color-highlight-bg: #{color.change($yellow, $alpha: 0.15)};
 
   /* target-based colors */
   --color-body: #{$lvl1};
