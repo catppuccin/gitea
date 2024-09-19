@@ -22,12 +22,16 @@ jobs:
         uses: "actions/upload-pages-artifact@v3"
         with:
           path: "dist/"
+          
+      - name: Upload CSS
+        uses: actions/upload-artifact@v4
+        with:
+          name: css
+          path: "dist/"
 
   release:
     needs: "build"
-
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       pull-requests: write
@@ -36,6 +40,12 @@ jobs:
       - name: "Release"
         id: "release"
         uses: "googleapis/release-please-action@v4"
+        
+      - name: Download CSS
+        uses: actions/download-artifact@v4
+        with:
+          name: css
+          path: "dist/"
 
       - name: Create tarball
         if: ${{ steps.release.outputs.release_created }}
@@ -50,13 +60,10 @@ jobs:
 
   deploy:
     needs: "build"
-
     runs-on: "ubuntu-latest"
-
     permissions:
       pages: "write"
       id-token: "write"
-
     environment:
       name: "github-pages"
       url: "${{ steps.deployment.outputs.page_url }}"
