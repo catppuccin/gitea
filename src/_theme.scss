@@ -23,6 +23,7 @@ $lvl3: if($isDark, $base, $crust);
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$lvl1};
+  --color-primary-hover: #{ctx_lighten($accent, 5%)};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
