@@ -22,7 +22,7 @@ jobs:
         uses: "actions/upload-pages-artifact@v3"
         with:
           path: "dist/"
-          
+
       - name: Upload CSS
         uses: actions/upload-artifact@v4
         with:
@@ -40,7 +40,7 @@ jobs:
       - name: "Release"
         id: "release"
         uses: "googleapis/release-please-action@v4"
-        
+
       - name: Download CSS
         uses: actions/download-artifact@v4
         with:
@@ -54,8 +54,8 @@ jobs:
       - name: Upload Release Artifacts
         if: ${{ steps.release.outputs.release_created }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ steps.release.outputs.tag_name }} ./catppuccin-gitea.tar.gz
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.release.outputs.tag_name }} ./catppuccin-gitea.tar.gz --repo $GITHUB_REPOSITORY
 
 
   deploy:
