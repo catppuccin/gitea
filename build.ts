@@ -44,19 +44,19 @@ for (const accent of accents) {
 }
 
 const flavorAccentIni = `
-   \`\`\`ini
-   [ui]
-   THEMES = ${flavors
+    \`\`\`ini
+    [ui]
+    THEMES = ${flavors
      .map((f) => accents.map((a) => `catppuccin-${f}-${a}`).join(","))
      .join(",")}
-   \`\`\`
+    \`\`\`
 `;
 
 const themeAutoIni = `
-   \`\`\`ini
-   [ui]
-   THEMES = ${accents.map((a) => `catppuccin-${a}-auto`).join(",")}
-   \`\`\`
+    \`\`\`ini
+    [ui]
+    THEMES = ${accents.map((a) => `catppuccin-${a}-auto`).join(",")}
+    \`\`\`
 `;
 
 const oldReadme = Deno.readTextFileSync(path.join(__dirname, "README.md"));
