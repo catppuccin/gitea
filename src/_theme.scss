@@ -116,6 +116,33 @@ $lvl3: if($isDark, $base, $crust);
       ctx_lighten($text, 10%)
     )};
 
+  /* dark 1 variants - produced via Sass scale-color(color, $lightness: -10%) */
+  --color-red-dark-1: #{ctx_lighten($red, 10%)};
+  --color-orange-dark-1: #{ctx_lighten($peach, 10%)};
+  --color-yellow-dark-1: #{ctx_lighten($yellow, 10%)};
+  --color-olive-dark-1: #{ctx_lighten($green, 10%)};
+  --color-green-dark-1: #{ctx_lighten($green, 10%)};
+  --color-teal-dark-1: #{ctx_lighten($teal, 10%)};
+  --color-blue-dark-1: #{ctx_lighten($blue, 10%)};
+  --color-violet-dark-1: #{ctx_lighten($lavender, 10%)};
+  --color-purple-dark-1: #{ctx_lighten($mauve, 10%)};
+  --color-pink-dark-1: #{ctx_lighten($pink, 10%)};
+  --color-brown-dark-1: #{ctx_lighten($flamingo, 10%)};
+  --color-black-dark-1: #{ctx_lighten($mantle, 10%)};
+  /* dark 2 variants - produced via Sass scale-color(color, $lightness: -20%) */
+  --color-red-dark-2: #{ctx_lighten($red, 20%)};
+  --color-orange-dark-2: #{ctx_lighten($peach, 20%)};
+  --color-yellow-dark-2: #{ctx_lighten($yellow, 20%)};
+  --color-olive-dark-2: #{ctx_lighten($green, 20%)};
+  --color-green-dark-2: #{ctx_lighten($green, 20%)};
+  --color-teal-dark-2: #{ctx_lighten($teal, 20%)};
+  --color-blue-dark-2: #{ctx_lighten($blue, 20%)};
+  --color-violet-dark-2: #{ctx_lighten($lavender, 20%)};
+  --color-purple-dark-2: #{ctx_lighten($mauve, 20%)};
+  --color-pink-dark-2: #{ctx_lighten($pink, 20%)};
+  --color-brown-dark-2: #{ctx_lighten($flamingo, 20%)};
+  --color-black-dark-2: #{ctx_lighten($mantle, 20%)};
+
   /* other colors */
   --color-gold: #{$rosewater};
   --color-white: #{$text};
