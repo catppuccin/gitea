@@ -294,6 +294,11 @@ $lvl3: if($isDark, $base, $crust);
   color: $lvl1;
 }
 
+// error message headers weirdly don't seem to be using --color-error-text
+.ui.negative.message .header {
+  color: var(--color-error-text)
+}
+
 // most recent commit hover when signed
 .ui.sha.isSigned.isVerified {
   .shortsha {
