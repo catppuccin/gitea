@@ -14,6 +14,7 @@ Deno.mkdirSync(path.join(__dirname, "dist"), { recursive: true });
 const sassBuilder = (flavor: string, accent: string) => `
 @import "@catppuccin/palette/scss/${flavor}";
 $accent: $${accent};
+$flavor: ${flavor};
 $isDark: ${flavor !== "latte"};
 @import "theme";
 `;
