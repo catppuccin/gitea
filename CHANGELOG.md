@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/catppuccin/gitea/compare/v1.0.0...v1.0.1) (2024-11-10)
+
+
+### Bug Fixes
+
+* set background colour for tooltips & inline code blocks ([#52](https://github.com/catppuccin/gitea/issues/52)) ([f0bf2b7](https://github.com/catppuccin/gitea/commit/f0bf2b7a907838ac9d6cd4c1c677e55f229d042c))
+
 ## [1.0.0](https://github.com/catppuccin/gitea/compare/v0.4.1...v1.0.0) (2024-10-06)
 
 
