@@ -1,0 +1,13 @@
+_default:
+  @just --list
+
+build:
+  cd .. && deno task build
+  mkdir -p ./conf/public/assets/css
+  cp ../dist/* ./conf/public/assets/css
+
+down:
+  docker compose down
+
+up: build down
+  docker compose up -d

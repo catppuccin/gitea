@@ -1,0 +1,59 @@
+services:
+  server:
+    image: gitea/gitea:1.22.3
+    container_name: gitea
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=postgres
+      - GITEA__database__HOST=db:5432
+      - GITEA__database__NAME=gitea
+      - GITEA__database__USER=gitea
+      - GITEA__database__PASSWD=gitea
+    networks:
+      - gitea
+    volumes:
+      # - ./conf/app.ini:/data/gitea/conf/app.ini
+      - type: bind
+        source: ./conf/app.ini
+        target: /data/gitea/conf/app.ini
+      - ./conf/public:/data/gitea/public
+      - ./conf/templates:/data/gitea/templates
+      - ./conf/locale:/data/gitea/options/locale
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000"
+      - "222:22"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fSs", "localhost:3000/api/healthz"]
+      interval: "30s"
+      timeout: "5s"
+      retries: 3
+
+  db:
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=gitea
+      - POSTGRES_DB=gitea
+    networks:
+      - gitea
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: "5s"
+      timeout: "5s"
+      retries: 3
+
+networks:
+  gitea:
+    name: "gitea"
+    external: false
