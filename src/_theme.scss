@@ -97,6 +97,19 @@ $lvl3: if($isDark, $base, $crust);
   --color-grey: #{$overlay2};
   --color-black: #{if(isDark, $mantle, $text)};
 
+  --color-icon-red: #{$red};
+  --color-icon-orange: #{$peach};
+  --color-icon-yellow: #{$yellow};
+  --color-icon-olive: #{$green};
+  --color-icon-green: #{$green};
+  --color-icon-teal: #{$teal};
+  --color-icon-blue: #{$blue};
+  --color-icon-violet: #{$lavender};
+  --color-icon-purple: #{$mauve};
+  --color-icon-pink: #{$pink};
+  --color-icon-brown: #{$flamingo};
+  --color-icon-grey: #{$overlay2};
+
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
   --color-red-light: #{ctx_lighten($red, 10%)};
   --color-orange-light: #{ctx_lighten($peach, 10%)};
