@@ -203,7 +203,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-input-border: #{$surface1};
   --color-input-border-hover: #{$surface2};
   --color-nav-bg: #{$lvl2};
-  --color-nav-hover-bg: #{$surface0};
+  --color-nav-hover-bg: var(--color-hover);
   --color-navbar: #{$lvl2};
   --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
   --color-light: #{color.change($surface2, $alpha: 0.3)};
@@ -214,7 +214,7 @@ $lvl3: if($isDark, $base, $crust);
     calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
   );
   --color-light-border: #{$surface2};
-  --color-hover: #{color.change($overlay0, $alpha: 0.1)};
+  --color-hover: #{color.change($overlay0, $alpha: 0.2)};
   --color-active: #{color.change($text, $alpha: 0.1)};
   --color-menu: #{$surface0};
   --color-card: #{$surface0};
