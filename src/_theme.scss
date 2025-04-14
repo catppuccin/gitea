@@ -299,7 +299,7 @@ $lvl3: if($isDark, $base, $crust);
 
 // error message headers weirdly don't seem to be using --color-error-text
 .ui.negative.message .header {
-  color: var(--color-error-text)
+  color: var(--color-error-text);
 }
 
 // most recent commit hover when signed
@@ -317,6 +317,12 @@ $lvl3: if($isDark, $base, $crust);
 .ui.basic.modal > .header,
 .ui.inverted.button {
   color: $text !important;
+}
+
+#repo-topics,
+// repository topics when in edit mode
+#topic_edit > .ui.selection.dropdown {
+  color: var(--color-label-text) !important;
 }
 
 .inline-code-block {
