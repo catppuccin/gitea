@@ -325,6 +325,26 @@ $lvl3: if($isDark, $base, $crust);
   color: var(--color-label-text) !important;
 }
 
+// admonitions are using *-text variables for border/text colour
+// can't change values of the *-text variables without breaking readability on accented backgrounds
+blockquote {
+  &.attention-tip {
+    border-left-color: var(--color-success-bg);
+  }
+  &.attention-warning {
+    border-left-color: var(--color-warning-bg);
+  }
+}
+svg,
+strong {
+  &.attention-tip {
+    color: var(--color-success-bg);
+  }
+  &.attention-warning {
+    color: var(--color-warning-bg);
+  }
+}
+
 .inline-code-block {
   color: #{$crust};
 }
