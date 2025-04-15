@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.2](https://github.com/catppuccin/gitea/compare/v1.0.1...v1.0.2) (2025-04-15)
+
+
+### Bug Fixes
+
+* navigation menu hover ([#63](https://github.com/catppuccin/gitea/issues/63)) ([0149059](https://github.com/catppuccin/gitea/commit/0149059743676698ceaf35c1c946e085889ec07f))
+* unreadable note & warning admonishments ([bd3ccb3](https://github.com/catppuccin/gitea/commit/bd3ccb35c510c24a07f35287fa03950fda4faf3a))
+* unreadable repository topics ([#61](https://github.com/catppuccin/gitea/issues/61)) ([6790ef9](https://github.com/catppuccin/gitea/commit/6790ef9335530e4f561bb0c45fba68df2d083e92))
+
 ## [1.0.1](https://github.com/catppuccin/gitea/compare/v1.0.0...v1.0.1) (2024-11-10)
 
 
