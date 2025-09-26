@@ -37,7 +37,7 @@ services:
       retries: 3
 
   db:
-    image: postgres:17
+    image: postgres:18
     restart: unless-stopped
     environment:
       - POSTGRES_USER=gitea
