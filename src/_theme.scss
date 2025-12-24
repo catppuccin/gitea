@@ -347,6 +347,11 @@ strong {
 
 .inline-code-block {
   color: #{$crust};
+  
+}
+
+code:not(pre code):not(.code-inner) {
+  background-color: var(--color-markup-code-inline) !important;
 }
 
 ::selection {
