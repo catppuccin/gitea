@@ -325,6 +325,11 @@ $lvl3: if($isDark, $base, $crust);
   color: var(--color-label-text) !important;
 }
 
+// repository topics edit button
+#manage_topic {
+  color: var(--color-text-light-2) !important;
+}
+
 // admonitions are using *-text variables for border/text colour
 // can't change values of the *-text variables without breaking readability on accented backgrounds
 blockquote {
