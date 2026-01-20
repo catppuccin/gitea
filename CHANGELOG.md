@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/catppuccin/gitea/compare/v1.0.2...v1.0.3) (2026-01-20)
+
+
+### Bug Fixes
+
+* unreadable repository topics edit button ([#79](https://github.com/catppuccin/gitea/issues/79)) ([b9d0857](https://github.com/catppuccin/gitea/commit/b9d0857cab5316074f64eb2bb12d562aa450c1ba))
+
 ## [1.0.2](https://github.com/catppuccin/gitea/compare/v1.0.1...v1.0.2) (2025-04-15)
 
 
