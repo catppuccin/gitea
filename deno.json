@@ -2,7 +2,7 @@
   "imports": {
     "@catppuccin/palette": "npm:@catppuccin/palette@^1.7.1",
     "@std/path": "jsr:@std/path@^1.0.8",
-    "sass": "npm:sass@1.86.3",
+    "sass": "npm:sass@1.97.3",
     "@catppuccin/deno-lib": "https://deno.land/x/catppuccin_toolbox@deno-lib-v1.1.0/deno-lib/mod.ts"
   },
   "nodeModulesDir": "auto",
