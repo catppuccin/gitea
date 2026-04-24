@@ -155,61 +155,43 @@ $lvl3: if($isDark, $base, $crust);
   --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.07)};
   --color-diff-added-row-border: #{color.change($green, $alpha: 0.07)};
   --color-diff-inactive: #{$overlay2};
-  --color-error-border: #{$red};
-  --color-error-bg: #{color.change($red, $alpha: 0.15)};
-  --color-error-bg-active: #{ctx_lighten($red, 5%)};
-  --color-error-bg-hover: #{ctx_lighten($red, 10%)};
-  --color-error-text: #{$text};
-  --color-success-border: #{ctx_lighten($green, 10%)};
-  --color-success-bg: #{$green};
-  --color-success-text: #{$lvl1};
-  --color-warning-border: #{ctx_lighten($yellow, 10%)};
-  --color-warning-bg: #{$yellow};
-  --color-warning-text: #{$lvl1};
-  --color-info-border: #{ctx_lighten($blue, 10%)};
-  --color-info-bg: #{$lvl1};
-  --color-info-text: #{$text};
-  --color-red-badge: #{ctx_lighten($red, 10%)};
-  --color-red-badge-bg: #{$lvl1};
-  --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
-  --color-green-badge: #{$green};
-  --color-green-badge-bg: #{$green};
-  --color-green-badge-hover-bg: #{ctx_lighten($green, 5%)};
-  --color-yellow-badge: #{$yellow};
-  --color-yellow-badge-bg: #{$lvl1};
-  --color-yellow-badge-hover-bg: #{ctx_lighten($yellow, 5%)};
-  --color-orange-badge: #{$peach};
-  --color-orange-badge-bg: #{$lvl1};
-  --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
 
-  --color-error-border: $red;
-  --color-error-bg: color.change($red, $alpha: 30%);
-  --color-error-bg-active: color.change($red, $alpha: 60%);
-  --color-error-bg-hover: color.change($red, $alpha: 45%);
   --color-error-text: $red;
-  --color-success-border: $green;
-  --color-success-bg: color.change($green, $alpha: 30%);
+  --color-error-bg: ctx_lighten($red, 15%);
+  --color-error-bg-hover: ctx_lighten($red, 30%);
+  --color-error-bg-active: ctx_lighten($red, 45%);
+  --color-error-border: $red;
+
   --color-success-text: $green;
-  --color-warning-border: $peach;
-  --color-warning-bg: color.change($peach, $alpha: 30%);
+  --color-success-bg: ctx_lighten($green, 15%);
+  --color-success-border: $green;
+
   --color-warning-text: $peach;
-  --color-info-border: $teal;
-  --color-info-bg: color.change($teal, $alpha: 30%);
+  --color-warning-bg: ctx_lighten($peach, 15%);
+  --color-warning-border: $peach;
+
   --color-info-text: $teal;
+  --color-info-bg: ctx_lighten($teal, 15%);
+  --color-info-border: $teal;
+
   --color-red-badge: $red;
-  --color-red-badge-bg: color.change($red, $alpha: 20%);
-  --color-red-badge-hover-bg: color.change($red, $alpha: 40%);
+  --color-red-badge-bg: ctx_lighten($red, 15%);
+  --color-red-badge-hover-bg: ctx_lighten($red, 30%);
+
   --color-green-badge: $green;
-  --color-green-badge-bg: color.change($green, $alpha: 20%);
-  --color-green-badge-hover-bg: color.change($green, $alpha: 40%);
+  --color-green-badge-bg: ctx_lighten($green, 15%);
+  --color-green-badge-hover-bg: ctx_lighten($green, 30%);
+
   --color-yellow-badge: $yellow;
-  --color-yellow-badge-bg: color.change($yellow, $alpha: 20%);
-  --color-yellow-badge-hover-bg: color.change($yellow, $alpha: 40%);
+  --color-yellow-badge-bg: ctx_lighten($yellow, 15%);
+  --color-yellow-badge-hover-bg: ctx_lighten($yellow, 30%);
+
   --color-orange-badge: $peach;
-  --color-orange-badge-bg: color.change($peach, $alpha: 20%);
-  --color-orange-badge-hover-bg: color.change($peach, $alpha: 40%);
+  --color-orange-badge-bg: ctx_lighten($peach, 15%);
+  --color-orange-badge-hover-bg: ctx_lighten($peach, 30%);
+
   --color-git: #{$peach};
-  --color-highlight-bg: #{color.change($yellow, $alpha: 0.15)};
+  --color-highlight-bg: #{ctx_lighten($yellow, 15%)};
 
   /* target-based colors */
   --color-body: #{$lvl1};
