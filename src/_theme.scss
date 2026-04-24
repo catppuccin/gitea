@@ -41,15 +41,15 @@ $lvl3: if($isDark, $base, $crust);
   --color-primary-light-6: #{ctx_lighten($accent, -18%)};
   --color-primary-light-7: #{ctx_lighten($accent, -21%)};
 
-  --color-primary-alpha-10: #{color.change($accent, $alpha: 0.1)};
-  --color-primary-alpha-20: #{color.change($accent, $alpha: 0.2)};
-  --color-primary-alpha-30: #{color.change($accent, $alpha: 0.3)};
-  --color-primary-alpha-40: #{color.change($accent, $alpha: 0.4)};
-  --color-primary-alpha-50: #{color.change($accent, $alpha: 0.5)};
-  --color-primary-alpha-60: #{color.change($accent, $alpha: 0.6)};
-  --color-primary-alpha-70: #{color.change($accent, $alpha: 0.7)};
-  --color-primary-alpha-80: #{color.change($accent, $alpha: 0.8)};
-  --color-primary-alpha-90: #{color.change($accent, $alpha: 0.9)};
+  --color-primary-alpha-10: #{ctx_lighten($accent, 10%)};
+  --color-primary-alpha-20: #{ctx_lighten($accent, 20%)};
+  --color-primary-alpha-30: #{ctx_lighten($accent, 30%)};
+  --color-primary-alpha-40: #{ctx_lighten($accent, 40%)};
+  --color-primary-alpha-50: #{ctx_lighten($accent, 50%)};
+  --color-primary-alpha-60: #{ctx_lighten($accent, 60%)};
+  --color-primary-alpha-70: #{ctx_lighten($accent, 70%)};
+  --color-primary-alpha-80: #{ctx_lighten($accent, 80%)};
+  --color-primary-alpha-90: #{ctx_lighten($accent, 90%)};
 
   --color-secondary: #{$surface1};
 
@@ -72,15 +72,15 @@ $lvl3: if($isDark, $base, $crust);
   --color-secondary-light-3: #{ctx_lighten($surface0, 9%)};
   --color-secondary-light-4: #{ctx_lighten($surface0, 12%)};
 
-  --color-secondary-alpha-10: #{color.change($surface0, $alpha: 0.1)};
-  --color-secondary-alpha-20: #{color.change($surface0, $alpha: 0.2)};
-  --color-secondary-alpha-30: #{color.change($surface0, $alpha: 0.3)};
-  --color-secondary-alpha-40: #{color.change($surface0, $alpha: 0.4)};
-  --color-secondary-alpha-50: #{color.change($surface0, $alpha: 0.5)};
-  --color-secondary-alpha-60: #{color.change($surface0, $alpha: 0.6)};
-  --color-secondary-alpha-70: #{color.change($surface0, $alpha: 0.7)};
-  --color-secondary-alpha-80: #{color.change($surface0, $alpha: 0.8)};
-  --color-secondary-alpha-90: #{color.change($surface0, $alpha: 0.9)};
+  --color-secondary-alpha-10: #{ctx_lighten($surface0, 10%)};
+  --color-secondary-alpha-20: #{ctx_lighten($surface0, 20%)};
+  --color-secondary-alpha-30: #{ctx_lighten($surface0, 30%)};
+  --color-secondary-alpha-40: #{ctx_lighten($surface0, 40%)};
+  --color-secondary-alpha-50: #{ctx_lighten($surface0, 50%)};
+  --color-secondary-alpha-60: #{ctx_lighten($surface0, 60%)};
+  --color-secondary-alpha-70: #{ctx_lighten($surface0, 70%)};
+  --color-secondary-alpha-80: #{ctx_lighten($surface0, 80%)};
+  --color-secondary-alpha-90: #{ctx_lighten($surface0, 90%)};
 
   /* colors */
   --color-red: #{$red};
@@ -146,14 +146,14 @@ $lvl3: if($isDark, $base, $crust);
   /* other colors */
   --color-gold: #{$rosewater};
   --color-white: #{$text};
-  --color-diff-removed-word-bg: #{color.change($red, $alpha: 0.15)};
-  --color-diff-added-word-bg: #{color.change($green, $alpha: 0.15)};
-  --color-diff-removed-row-bg: #{color.change($red, $alpha: 0.07)};
-  --color-diff-moved-row-bg: #{color.change($yellow, $alpha: 0.07)};
-  --color-diff-added-row-bg: #{color.change($green, $alpha: 0.07)};
-  --color-diff-removed-row-border: #{color.change($red, $alpha: 0.07)};
-  --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.07)};
-  --color-diff-added-row-border: #{color.change($green, $alpha: 0.07)};
+  --color-diff-removed-word-bg: #{ctx_lighten($red, 15%)};
+  --color-diff-added-word-bg: #{ctx_lighten($green, 15%)};
+  --color-diff-removed-row-bg: #{ctx_lighten($red, 7%)};
+  --color-diff-moved-row-bg: #{ctx_lighten($yellow, 7%)};
+  --color-diff-added-row-bg: #{ctx_lighten($green, 7%)};
+  --color-diff-removed-row-border: #{ctx_lighten($red, 7%)};
+  --color-diff-moved-row-border: #{ctx_lighten($yellow, 7%)};
+  --color-diff-added-row-border: #{ctx_lighten($green, 7%)};
   --color-diff-inactive: #{$overlay2};
   --color-error-border: #{$red};
   --color-error-bg: #{$red};
@@ -205,8 +205,8 @@ $lvl3: if($isDark, $base, $crust);
   --color-nav-bg: #{$lvl2};
   --color-nav-hover-bg: var(--color-hover);
   --color-navbar: #{$lvl2};
-  --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
-  --color-light: #{color.change($surface2, $alpha: 0.3)};
+  --color-navbar-transparent: #{ctx_lighten($lvl1, 0)};
+  --color-light: #{ctx_lighten($surface2, 3%)};
   --color-light-mimic-enabled: rgba(
     0,
     0,
@@ -214,17 +214,17 @@ $lvl3: if($isDark, $base, $crust);
     calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
   );
   --color-light-border: #{$surface2};
-  --color-hover: #{color.change($overlay0, $alpha: 0.2)};
-  --color-active: #{color.change($text, $alpha: 0.1)};
+  --color-hover: #{ctx_lighten($overlay0, 20%)};
+  --color-active: #{ctx_lighten($text, 10%)};
   --color-menu: #{$surface0};
   --color-card: #{$surface0};
-  --color-markup-table-row: #{color.change($text, $alpha: 0.02)};
-  --color-markup-code-block: #{color.change($text, $alpha: 0.05)};
+  --color-markup-table-row: #{ctx_lighten($text, 2%)};
+  --color-markup-code-block: #{ctx_lighten($text, 5%)};
   --color-markup-code-inline: #{$surface0};
   --color-button: #{$surface0};
   --color-code-bg: #{$base};
   --color-code-sidebar-bg: #{$surface0};
-  --color-shadow: #{color.change($lvl1, $alpha: 0.1)};
+  --color-shadow: #{ctx_lighten($lvl1, 10%)};
   --color-tooltip-bg: #{$surface0};
   --color-tooltip-text: var(--color-text);
   --color-secondary-bg: #{$surface0};
@@ -236,10 +236,10 @@ $lvl3: if($isDark, $base, $crust);
   /* gitea source code: */
   /* should ideally be --color-text-dark, see go-gitea/gitea#15651 */
   --color-caret: var(--color-text);
-  --color-reaction-bg: #{color.change($text, $alpha: 0.07)};
+  --color-reaction-bg: #{ctx_lighten($text, 7%)};
   --color-reaction-active-bg: var(--color-primary-alpha-40);
   --color-header-wrapper: #{$lvl2};
-  --color-header-wrapper-transparent: #{color.change($lvl2, $alpha: 0)};
+  --color-header-wrapper-transparent: #{ctx_lighten($lvl2, 0%)};
   --color-label-text: #{$crust};
   --color-label-bg: #{$accent};
   --color-label-hover-bg: #{ctx_lighten($accent, 6%)};
@@ -355,7 +355,7 @@ strong {
 }
 
 ::selection {
-  background: color.change($accent, $alpha: 0.3) !important;
+  background: ctx_lighten($accent, 30%) !important;
 }
 
 @import "chroma";
