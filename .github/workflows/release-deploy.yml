@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: "Release"
         id: "release"
-        uses: googleapis/release-please-action@v4
+        uses: googleapis/release-please-action@v5
       - name: Download CSS
         uses: actions/download-artifact@v4
         with:
