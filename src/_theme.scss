@@ -23,7 +23,8 @@ $lvl3: if($isDark, $base, $crust);
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$lvl1};
-  --color-primary-hover: #{ctx_lighten($accent, 5%)};
+  --color-primary-hover: #{ctx_lighten($accent, 3%)};
+  --color-primary-active: #{ctx_lighten($accent, 6%)};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
@@ -155,34 +156,43 @@ $lvl3: if($isDark, $base, $crust);
   --color-diff-moved-row-border: #{color.change($yellow, $alpha: 0.07)};
   --color-diff-added-row-border: #{color.change($green, $alpha: 0.07)};
   --color-diff-inactive: #{$overlay2};
+
+  --color-error-text: #{$red};
+  --color-error-bg: #{color.change($red, $alpha: 15%)};
+  --color-error-bg-hover: #{color.change($red, $alpha: 30%)};
+  --color-error-bg-active: #{color.change($red, $alpha: 45%)};
   --color-error-border: #{$red};
-  --color-error-bg: #{$red};
-  --color-error-bg-active: #{ctx_lighten($red, 5%)};
-  --color-error-bg-hover: #{ctx_lighten($red, 10%)};
-  --color-error-text: #{$lvl1};
-  --color-success-border: #{ctx_lighten($green, 10%)};
-  --color-success-bg: #{$green};
-  --color-success-text: #{$lvl1};
-  --color-warning-border: #{ctx_lighten($yellow, 10%)};
-  --color-warning-bg: #{$yellow};
-  --color-warning-text: #{$lvl1};
-  --color-info-border: #{ctx_lighten($blue, 10%)};
-  --color-info-bg: #{$lvl1};
-  --color-info-text: #{$text};
-  --color-red-badge: #{ctx_lighten($red, 10%)};
-  --color-red-badge-bg: #{$lvl1};
-  --color-red-badge-hover-bg: #{ctx_lighten($red, 5%)};
+
+  --color-success-text: #{$green};
+  --color-success-bg: #{color.change($green, $alpha: 15%)};
+  --color-success-border: #{$green};
+
+  --color-warning-text: #{$peach};
+  --color-warning-bg: #{color.change($peach, $alpha: 15%)};
+  --color-warning-border: #{$peach};
+
+  --color-info-text: #{$teal};
+  --color-info-bg: #{color.change($teal, $alpha: 15%)};
+  --color-info-border: #{$teal};
+
+  --color-red-badge: #{$red};
+  --color-red-badge-bg: #{color.change($red, $alpha: 15%)};
+  --color-red-badge-hover-bg: #{color.change($red, $alpha: 30%)};
+
   --color-green-badge: #{$green};
-  --color-green-badge-bg: #{$green};
-  --color-green-badge-hover-bg: #{ctx_lighten($green, 5%)};
+  --color-green-badge-bg: #{color.change($green, $alpha: 15%)};
+  --color-green-badge-hover-bg: #{color.change($green, $alpha: 30%)};
+
   --color-yellow-badge: #{$yellow};
-  --color-yellow-badge-bg: #{$lvl1};
-  --color-yellow-badge-hover-bg: #{ctx_lighten($yellow, 5%)};
+  --color-yellow-badge-bg: #{color.change($yellow, $alpha: 15%)};
+  --color-yellow-badge-hover-bg: #{color.change($yellow, $alpha: 30%)};
+
   --color-orange-badge: #{$peach};
-  --color-orange-badge-bg: #{$lvl1};
-  --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
+  --color-orange-badge-bg: #{color.change($peach, $alpha: 15%)};
+  --color-orange-badge-hover-bg: #{color.change($peach, $alpha: 30%)};
+
   --color-git: #{$peach};
-  --color-highlight-bg: #{color.change($yellow, $alpha: 0.15)};
+  --color-highlight-bg: #{color.change($yellow, $alpha: 15%)};
 
   /* target-based colors */
   --color-body: #{$lvl1};
@@ -203,7 +213,8 @@ $lvl3: if($isDark, $base, $crust);
   --color-input-border: #{$surface1};
   --color-input-border-hover: #{$surface2};
   --color-nav-bg: #{$lvl2};
-  --color-nav-hover-bg: var(--color-hover);
+  --color-nav-hover-bg: #{ctx_lighten($lvl2, 3%)};
+  --color-nav-active-bg: #{ctx_lighten($lvl2, 6%)};
   --color-navbar: #{$lvl2};
   --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
   --color-light: #{color.change($surface2, $alpha: 0.3)};
@@ -214,8 +225,8 @@ $lvl3: if($isDark, $base, $crust);
     calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
   );
   --color-light-border: #{$surface2};
-  --color-hover: #{color.change($overlay0, $alpha: 0.2)};
-  --color-active: #{color.change($text, $alpha: 0.1)};
+  --color-hover: #{color.change($overlay0, $alpha: 15%)};
+  --color-active: #{color.change($text, $alpha: 30%)};
   --color-menu: #{$surface0};
   --color-card: #{$surface0};
   --color-markup-table-row: #{color.change($text, $alpha: 0.02)};
@@ -242,8 +253,8 @@ $lvl3: if($isDark, $base, $crust);
   --color-header-wrapper-transparent: #{color.change($lvl2, $alpha: 0)};
   --color-label-text: #{$crust};
   --color-label-bg: #{$accent};
-  --color-label-hover-bg: #{ctx_lighten($accent, 6%)};
-  --color-label-active-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-hover-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-active-bg: #{ctx_lighten($accent, 6%)};
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
   --color-active-line: #{$surface1};
