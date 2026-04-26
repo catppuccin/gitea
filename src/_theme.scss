@@ -1,5 +1,9 @@
 @use "sass:color";
 
+@mixin chroma($flavor) {
+  @import url("https://raw.githubusercontent.com/catppuccin/chroma/012c54d4b3122128c1523fe7ca2d41e9e11be7e4/dist/#{$flavor}-chroma-style.css");
+}
+
 // context-aware lighten: darkens if dark, lightens if light
 @function ctx_lighten($color, $amount) {
   $multiplier: if($isDark, -1, 1);
@@ -358,6 +362,6 @@ strong {
   background: color.change($accent, $alpha: 0.3) !important;
 }
 
-@import "chroma";
+@include chroma($flavor);
 @import "codemirror";
 @import "monaco";
