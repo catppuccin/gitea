@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:string";
 
 /* context-aware lighten: darkens if dark, lightens if light */
 @function ctx_lighten($color, $amount) {
@@ -23,8 +24,8 @@ $lvl3: if($isDark, $base, $crust);
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$lvl1};
-  --color-primary-hover: #{ctx_lighten($accent, 5%)};
-  --color-primary-active: #{ctx_lighten($accent, 10%)};
+  --color-primary-hover: #{ctx_lighten($accent, 3%)};
+  --color-primary-active: #{ctx_lighten($accent, 6%)};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
@@ -53,9 +54,9 @@ $lvl3: if($isDark, $base, $crust);
   --color-primary-alpha-90: #{color.change($accent, $alpha: 0.9)};
 
   --color-secondary: #{$surface1};
-  --color-secondary-button: #{color.change($overlay2, $alpha: 0.2)};
-  --color-secondary-hover: #{color.change($overlay2, $alpha: 0.4)};
-  --color-secondary-active: #{color.change($overlay2, $alpha: 0.6)};
+  --color-secondary-button: #{color.change($overlay2, $alpha: 15%)};
+  --color-secondary-hover: #{color.change($overlay2, $alpha: 30%)};
+  --color-secondary-active: #{color.change($overlay2, $alpha: 45%)};
 
   --color-secondary-dark-1: #{ctx_lighten($surface0, -3%)};
   --color-secondary-dark-2: #{ctx_lighten($surface0, -6%)};
@@ -107,50 +108,45 @@ $lvl3: if($isDark, $base, $crust);
   --color-black: #{if(isDark, $mantle, $text)};
 
   @function ansibright($color) {
-    @if isDark {
-      @return oklch(
-        calc(lightness($color) * 0.94)
-        calc(saturation($color) + 8)
-        calc(hue($color) + 2deg)
-      );
-    }
-    @else {
-      @return oklch(
-        calc(lightness($color) * 1.09)
-        saturation($color)
-        calc(hue($color) + 2deg)
-      );
+    $l: color.channel($color, "lightness", $space: oklch);
+    $c: color.channel($color, "chroma", $space: oklch);
+    $h: color.channel($color, "hue", $space: oklch);
+
+    @if $isDark {
+      @return string.unquote('oklch(#{calc($l * 0.94)} #{calc($c + 0.08)} #{calc($h + 2deg)})');
+    } @else {
+      @return string.unquote('oklch(#{calc($l * 1.09)} #{$c} #{calc($h + 2deg)})');
     }
   }
 
   /* ANSI colours */
   --color-ansi-black: #{if(isDark, $surface1, $subtext1)};
-  --color-ansi-red: $red;
-  --color-ansi-green: $green;
-  --color-ansi-yellow: $yellow;
-  --color-ansi-blue: $blue;
-  --color-ansi-magenta: $pink;
-  --color-ansi-cyan: $teal;
+  --color-ansi-red: #{$red};
+  --color-ansi-green: #{$green};
+  --color-ansi-yellow: #{$yellow};
+  --color-ansi-blue: #{$blue};
+  --color-ansi-magenta: #{$pink};
+  --color-ansi-cyan: #{$teal};
   --color-ansi-white: #{if(isDark, $subtext0, $surface2)};
 
   --color-ansi-bright-black: #{if(isDark, $surface2, subtext0)};
-  --color-ansi-bright-red: ansibright($red);
-  --color-ansi-bright-green: ansibright($green);
-  --color-ansi-bright-yellow: ansibright($yellow);
-  --color-ansi-bright-blue: ansibright($blue);
-  --color-ansi-bright-magenta: ansibright($pink);
-  --color-ansi-bright-cyan: ansibright($teal);
-  --color-ansi-bright-white: #{if(isDark), $subtext1, $surface1};
+  --color-ansi-bright-red: #{ansibright($red)};
+  --color-ansi-bright-green: #{ansibright($green)};
+  --color-ansi-bright-yellow: #{ansibright($yellow)};
+  --color-ansi-bright-blue: #{ansibright($blue)};
+  --color-ansi-bright-magenta: #{ansibright($pink)};
+  --color-ansi-bright-cyan: #{ansibright($teal)};
+  --color-ansi-bright-white: #{if(isDark, $subtext1, $surface1)};
 
   /* console colors */
-  --color-console-fg: $text;
-  --color-console-fg-subtle: $subtext0;
-  --color-console-bg: $surface0;
-  --color-console-border: $overlay0;
-  --color-console-hover-bg: $surface1;
-  --color-console-active-bg: $surface2;
-  --color-console-menu-bg: $surface1;
-  --color-console-menu-border: $overlay0;
+  --color-console-fg: #{$text};
+  --color-console-fg-subtle: #{$subtext0};
+  --color-console-bg: #{$surface0};
+  --color-console-border: #{$overlay0};
+  --color-console-hover-bg: #{$surface1};
+  --color-console-active-bg: #{$surface2};
+  --color-console-menu-bg: #{$surface1};
+  --color-console-menu-border: #{$overlay0};
 
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
   --color-red-light: #{ctx_lighten($red, 10%)};
@@ -252,7 +248,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-text-light-2: #{$subtext1};
   --color-text-light-3: #{$subtext1};
   --color-footer: #{$lvl2};
-  --color-footer-text: $subtext0;
+  --color-footer-text: #{$subtext0};
   --color-timeline: #{$surface0};
   --color-input-text: #{$text};
   --color-input-background: #{$surface0};
@@ -260,9 +256,10 @@ $lvl3: if($isDark, $base, $crust);
   --color-input-border: #{$surface1};
   --color-input-border-hover: #{$surface2};
   --color-nav-bg: #{$lvl2};
-  --color-nav-text: $text;
-  --color-secondary-nav-bg: $surface0;
-  --color-nav-hover-bg: var(--color-hover);
+  --color-nav-hover-bg: #{ctx_lighten($lvl2, 3%)};
+  --color-nav-active-bg: #{ctx_lighten($lvl2, 6%)};
+  --color-nav-text: #{$text};
+  --color-secondary-nav-bg: #{$surface0};
   --color-navbar: #{$lvl2};
   --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
   --color-light: #{color.change($surface2, $alpha: 0.3)};
@@ -301,8 +298,8 @@ $lvl3: if($isDark, $base, $crust);
   --color-header-wrapper-transparent: #{color.change($lvl2, $alpha: 0)};
   --color-label-text: #{$crust};
   --color-label-bg: #{$accent};
-  --color-label-hover-bg: #{ctx_lighten($accent, 6%)};
-  --color-label-active-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-hover-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-active-bg: #{ctx_lighten($accent, 6%)};
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
   --color-active-line: #{$surface1};
@@ -348,6 +345,7 @@ $lvl3: if($isDark, $base, $crust);
   &.red,
   &.teal {
     color: $lvl1;
+
     &:hover {
       color: $lvl3;
     }
@@ -373,6 +371,7 @@ $lvl3: if($isDark, $base, $crust);
   .shortsha {
     color: $lvl1;
   }
+
   svg.gitea-lock {
     fill: $lvl1;
   }
@@ -386,7 +385,7 @@ $lvl3: if($isDark, $base, $crust);
 }
 
 #repo-topics,
-/* repository topics when in edit mode */
+  /* repository topics when in edit mode */
 #topic_edit > .ui.selection.dropdown {
   color: var(--color-label-text) !important;
 }
@@ -405,15 +404,18 @@ blockquote {
   &.attention-tip {
     border-left-color: var(--color-success-bg);
   }
+
   &.attention-warning {
     border-left-color: var(--color-warning-bg);
   }
 }
+
 svg,
 strong {
   &.attention-tip {
     color: var(--color-success-bg);
   }
+
   &.attention-warning {
     color: var(--color-warning-bg);
   }
