@@ -1,6 +1,7 @@
 @use "sass:color";
+@use "sass:string";
 
-// context-aware lighten: darkens if dark, lightens if light
+/* context-aware lighten: darkens if dark, lightens if light */
 @function ctx_lighten($color, $amount) {
   $multiplier: if($isDark, -1, 1);
   @return color.adjust($color, $lightness: $amount * $multiplier);
@@ -23,7 +24,8 @@ $lvl3: if($isDark, $base, $crust);
 
   --color-primary: #{$accent};
   --color-primary-contrast: #{$lvl1};
-  --color-primary-hover: #{ctx_lighten($accent, 5%)};
+  --color-primary-hover: #{ctx_lighten($accent, 3%)};
+  --color-primary-active: #{ctx_lighten($accent, 6%)};
 
   --color-primary-dark-1: #{ctx_lighten($accent, 3%)};
   --color-primary-dark-2: #{ctx_lighten($accent, 6%)};
@@ -52,6 +54,9 @@ $lvl3: if($isDark, $base, $crust);
   --color-primary-alpha-90: #{color.change($accent, $alpha: 0.9)};
 
   --color-secondary: #{$surface1};
+  --color-secondary-button: #{color.change($overlay2, $alpha: 15%)};
+  --color-secondary-hover: #{color.change($overlay2, $alpha: 30%)};
+  --color-secondary-active: #{color.change($overlay2, $alpha: 45%)};
 
   --color-secondary-dark-1: #{ctx_lighten($surface0, -3%)};
   --color-secondary-dark-2: #{ctx_lighten($surface0, -6%)};
@@ -82,6 +87,11 @@ $lvl3: if($isDark, $base, $crust);
   --color-secondary-alpha-80: #{color.change($surface0, $alpha: 0.8)};
   --color-secondary-alpha-90: #{color.change($surface0, $alpha: 0.9)};
 
+  /* reactions */
+  --color-reaction-bg: #{$surface0};
+  --color-reaction-hover-bg: #{$surface1};
+  --color-reaction-active-bg: #{$surface2};
+
   /* colors */
   --color-red: #{$red};
   --color-orange: #{$peach};
@@ -96,6 +106,47 @@ $lvl3: if($isDark, $base, $crust);
   --color-brown: #{$flamingo};
   --color-grey: #{$overlay2};
   --color-black: #{if(isDark, $mantle, $text)};
+
+  @function ansibright($color) {
+    $l: color.channel($color, "lightness", $space: oklch);
+    $c: color.channel($color, "chroma", $space: oklch);
+    $h: color.channel($color, "hue", $space: oklch);
+
+    @if $isDark {
+      @return string.unquote('oklch(#{calc($l * 0.94)} #{calc($c + 0.08)} #{calc($h + 2deg)})');
+    } @else {
+      @return string.unquote('oklch(#{calc($l * 1.09)} #{$c} #{calc($h + 2deg)})');
+    }
+  }
+
+  /* ANSI colours */
+  --color-ansi-black: #{if(isDark, $surface1, $subtext1)};
+  --color-ansi-red: #{$red};
+  --color-ansi-green: #{$green};
+  --color-ansi-yellow: #{$yellow};
+  --color-ansi-blue: #{$blue};
+  --color-ansi-magenta: #{$pink};
+  --color-ansi-cyan: #{$teal};
+  --color-ansi-white: #{if(isDark, $subtext0, $surface2)};
+
+  --color-ansi-bright-black: #{if(isDark, $surface2, subtext0)};
+  --color-ansi-bright-red: #{ansibright($red)};
+  --color-ansi-bright-green: #{ansibright($green)};
+  --color-ansi-bright-yellow: #{ansibright($yellow)};
+  --color-ansi-bright-blue: #{ansibright($blue)};
+  --color-ansi-bright-magenta: #{ansibright($pink)};
+  --color-ansi-bright-cyan: #{ansibright($teal)};
+  --color-ansi-bright-white: #{if(isDark, $subtext1, $surface1)};
+
+  /* console colors */
+  --color-console-fg: #{$text};
+  --color-console-fg-subtle: #{$subtext0};
+  --color-console-bg: #{$surface0};
+  --color-console-border: #{$overlay0};
+  --color-console-hover-bg: #{$surface1};
+  --color-console-active-bg: #{$surface2};
+  --color-console-menu-bg: #{$surface1};
+  --color-console-menu-border: #{$overlay0};
 
   /* light variants - produced via Sass scale-color(color, $lightness: -10%) */
   --color-red-light: #{ctx_lighten($red, 10%)};
@@ -182,7 +233,8 @@ $lvl3: if($isDark, $base, $crust);
   --color-orange-badge-bg: #{$lvl1};
   --color-orange-badge-hover-bg: #{ctx_lighten($peach, 5%)};
   --color-git: #{$peach};
-  --color-highlight-bg: #{color.change($yellow, $alpha: 0.15)};
+  --color-highlight-fg: #{$peach};
+  --color-highlight-bg: #{color.change($peach, $alpha: 30%)};
 
   /* target-based colors */
   --color-body: #{$lvl1};
@@ -196,6 +248,7 @@ $lvl3: if($isDark, $base, $crust);
   --color-text-light-2: #{$subtext1};
   --color-text-light-3: #{$subtext1};
   --color-footer: #{$lvl2};
+  --color-footer-text: #{$subtext0};
   --color-timeline: #{$surface0};
   --color-input-text: #{$text};
   --color-input-background: #{$surface0};
@@ -203,7 +256,10 @@ $lvl3: if($isDark, $base, $crust);
   --color-input-border: #{$surface1};
   --color-input-border-hover: #{$surface2};
   --color-nav-bg: #{$lvl2};
-  --color-nav-hover-bg: var(--color-hover);
+  --color-nav-hover-bg: #{ctx_lighten($lvl2, 3%)};
+  --color-nav-active-bg: #{ctx_lighten($lvl2, 6%)};
+  --color-nav-text: #{$text};
+  --color-secondary-nav-bg: #{$surface0};
   --color-navbar: #{$lvl2};
   --color-navbar-transparent: #{color.change($lvl1, $alpha: 0)};
   --color-light: #{color.change($surface2, $alpha: 0.3)};
@@ -242,11 +298,18 @@ $lvl3: if($isDark, $base, $crust);
   --color-header-wrapper-transparent: #{color.change($lvl2, $alpha: 0)};
   --color-label-text: #{$crust};
   --color-label-bg: #{$accent};
-  --color-label-hover-bg: #{ctx_lighten($accent, 6%)};
-  --color-label-active-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-hover-bg: #{ctx_lighten($accent, 3%)};
+  --color-label-active-bg: #{ctx_lighten($accent, 6%)};
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
   --color-active-line: #{$surface1};
+
+  /* tooltips */
+  --color-overlay-backdrop: #{color.change($crust, $alpha: 60%)};
+  --checkerboard-color-1: #{$surface0};
+  --checkerboard-color-2: #{$surface1};
+  --color-tooltip-text: #{$text}; /* tippy box text (fixed page info) */
+  --color-tooltip-bg: #{$surface0}; /* tippy box bg (popup) */
 }
 
 @if $isDark {
@@ -282,6 +345,7 @@ $lvl3: if($isDark, $base, $crust);
   &.red,
   &.teal {
     color: $lvl1;
+
     &:hover {
       color: $lvl3;
     }
@@ -292,27 +356,28 @@ $lvl3: if($isDark, $base, $crust);
   background-color: $lvl3;
 }
 
-// link color for signed commits
+/* link color for signed commits */
 .ui.commit-header-row .svg.gitea-lock ~ a {
   color: $lvl1;
 }
 
-// error message headers weirdly don't seem to be using --color-error-text
+/* error message headers weirdly don't seem to be using --color-error-text */
 .ui.negative.message .header {
   color: var(--color-error-text);
 }
 
-// most recent commit hover when signed
+/* most recent commit hover when signed */
 .ui.sha.isSigned.isVerified {
   .shortsha {
     color: $lvl1;
   }
+
   svg.gitea-lock {
     fill: $lvl1;
   }
 }
 
-// modal text color for the "Remove GPG Key" modal
+/* modal text color for the "Remove GPG Key" modal */
 .ui.basic.modal,
 .ui.basic.modal > .header,
 .ui.inverted.button {
@@ -320,31 +385,37 @@ $lvl3: if($isDark, $base, $crust);
 }
 
 #repo-topics,
-// repository topics when in edit mode
+  /* repository topics when in edit mode */
 #topic_edit > .ui.selection.dropdown {
   color: var(--color-label-text) !important;
 }
 
-// repository topics edit button
+/* repository topics edit button */
 #manage_topic {
   color: var(--color-text-light-2) !important;
 }
 
-// admonitions are using *-text variables for border/text colour
-// can't change values of the *-text variables without breaking readability on accented backgrounds
+/*
+ * admonitions are using *-text variables for border/text colour
+ * can't change values of the *-text variables without breaking
+ * readability on accented backgrounds
+ */
 blockquote {
   &.attention-tip {
     border-left-color: var(--color-success-bg);
   }
+
   &.attention-warning {
     border-left-color: var(--color-warning-bg);
   }
 }
+
 svg,
 strong {
   &.attention-tip {
     color: var(--color-success-bg);
   }
+
   &.attention-warning {
     color: var(--color-warning-bg);
   }
