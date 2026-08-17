@@ -294,3 +294,7 @@
 .chroma .w {
   color: $surface0;
 }
+/* Error */
+.chroma .err {
+  /* not styled because Chroma uses it on too many things like JSX */
+}
