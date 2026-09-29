@@ -408,6 +408,10 @@ $lvl3: if($isDark, $base, $crust);
   color: var(--color-text-light-2) !important;
 }
 
+.tippy-box[data-theme="dialog"] {
+  color: var(--color-tooltip-text);
+}
+
 /*
  * admonitions are using *-text variables for border/text colour
  * can't change values of the *-text variables without breaking
