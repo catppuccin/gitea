@@ -341,9 +341,9 @@ $lvl3: if($isDark, $base, $crust);
 .ui.ui.ui.button:not(.inverted, .basic),
 .ui.ui.ui.label:not(.inverted, .basic) {
   &.primary,
-  &.green,
   &.red,
   &.orange,
+  &.green,
   &.teal,
   &.purple,
   &[class*="task-status-"] {
