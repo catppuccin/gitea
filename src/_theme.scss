@@ -198,6 +198,14 @@ $lvl3: if($isDark, $base, $crust);
   --color-brown-dark-2: #{ctx_lighten($flamingo, 20%)};
   --color-black-dark-2: #{ctx_lighten($mantle, 20%)};
 
+  /* thin colors */
+  --color-thin-green: var(--color-green-dark-1);
+  --color-thin-red: var(--color-red-dark-1);
+  --color-thin-purple: var(--color-purple-dark-1);
+  --color-thin-violet: var(--color-violet-dark-1);
+  --color-thin-orange: var(--color-orange-dark-1);
+  --color-thin-blue: var(--color-blue-dark-1);
+
   /* other colors */
   --color-gold: #{$rosewater};
   --color-white: #{$text};
@@ -411,32 +419,6 @@ $lvl3: if($isDark, $base, $crust);
 
 .tippy-box[data-theme="dialog"] {
   color: var(--color-tooltip-text);
-}
-
-/*
- * admonitions are using *-text variables for border/text colour
- * can't change values of the *-text variables without breaking
- * readability on accented backgrounds
- */
-blockquote {
-  &.attention-tip {
-    border-left-color: var(--color-success-bg);
-  }
-
-  &.attention-warning {
-    border-left-color: var(--color-warning-bg);
-  }
-}
-
-svg,
-strong {
-  &.attention-tip {
-    color: var(--color-success-bg);
-  }
-
-  &.attention-warning {
-    color: var(--color-warning-bg);
-  }
 }
 
 .inline-code-block {
